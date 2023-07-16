@@ -1,0 +1,19 @@
+// brand.js
+const { DataTypes } = require('sequelize');
+
+module.exports = (sequelize, Sequelize) => {
+    const Brand = sequelize.define('Brand', {
+        id: {
+        type: DataTypes.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+        },
+        name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
+
+    });
+
+    return Brand;
+};
