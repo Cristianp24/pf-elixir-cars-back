@@ -1,18 +1,25 @@
 const express = require('express');
-const morgan = require('morgan');
 
-const app = express();
+const router = require("./routes/index");
 
-app.use(morgan("dev"));
+require("./db.js");
 
-app.use((req,res,next)=> {
-    console.log("Pasado por el middlewaree");
-    next();
-})
+const server = express();
 
-app.get("/", (req,res) => {
-    res.status(200).send("Llegue al endpoint")
-} )
+server.use((req, res, next)=>{
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  res.header(
+      'Access-Control-Allow-Methods',
+      'GET, POST, OPTIONS, PUT, DELETE'
+  );
+  next();
+});
 
+server.use('/', router);
+module.exports =  server;
 
-module.exports = app;
