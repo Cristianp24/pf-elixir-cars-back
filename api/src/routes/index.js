@@ -1,4 +1,3 @@
- Angel
 const { Router } = require('express');
 const getAllCars = require('../controllers/getAllCars');
 const getCarById = require('../controllers/getCarById');
@@ -17,15 +16,14 @@ router.put('/cars/:id', updateCar);    // Actualizar un auto existente
 router.delete('/cars/:id', deleteCar); // Eliminar un auto por su ID
 
 module.exports = router;
-=======
-const { Router } = require("express");
-const getAllCars = require('../controllers/getAllCars')
+// const { Router } = require("express");
+// const getAllCars = require('../controllers/getAllCars')
 
-const router = Router();
-
-
-router.get("/cars", getAllCars);
+// // const router = Router();
 
 
-module.exports = router;
-Develop
+// router.get("/cars", getAllCars);
+
+
+// module.exports = router;
+// Develop

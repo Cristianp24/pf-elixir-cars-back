@@ -1,45 +1,33 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
-
-const brandModel = require("./models/Brand");
-const carsModel = require("./models/Cars");
-const carModelModel = require("./models/CarModel");
+const brandModel = require("./models/brand");
+const carModelModel = require("./models/carModel");
+const carsModel = require("./models/cars");
 
 
 const sequelize = new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/carelixir`,
-    {
-      logging: false, // set to console.log to see the raw SQL queries
-      native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-    }
-  );
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/elixircars`,
+  { logging: false, native: false }
+);
 
-carsModel(sequelize);
 brandModel(sequelize);
 carModelModel(sequelize);
+carsModel(sequelize);
+// FichaTecnica(sequelize);
 
+const { brand, carModel, cars } = sequelize.models;
 
+carModel.hasMany(cars);
+cars.belongsTo(carModel, { foreignKey: "carModelId" });
 
+brand.hasMany(cars);
+cars.belongsTo(brand, { foreignKey: "brandId" });
 
-  const { Cars, Brand, CarModel } = sequelize.models;
-
-  CarModel.hasMany(Cars);
-  Cars.belongsTo(CarModel, { foreignKey: "modelId" });
-  
-  Brand.hasMany(Cars);
-  Cars.belongsTo(Brand, { foreignKey: "brandId" });
-
-
-  
-
-
-
-
-  module.exports = {
-    Cars,
-  Brand,
-  CarModel,
-    conn: sequelize, // para importart la conexión { conn } = require('./db.js');
-  };
+module.exports = {
+  carModel,
+  cars,
+  brand,
+  conn: sequelize,
+};
   

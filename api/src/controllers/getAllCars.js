@@ -1,6 +1,6 @@
- Angel
+//  Angel
 
- Develop
+//  Develop
 const fs = require('fs')
 
 
@@ -11,13 +11,13 @@ async function getAllCars(req, res){
    
         const dataCarApi = JSON.parse(jsonData);
 
- Angel
+//  Angel
         
 
 
  
        
-Develop
+// Develop
           
         res.status(200).json(dataCarApi);
     }   catch (error){
