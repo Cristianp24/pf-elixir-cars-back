@@ -5,7 +5,7 @@ module.exports = (sequelize, Sequelize) => {
     const CarModel = sequelize.define('CarModel', {
         id: {
         type: DataTypes.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         },
         name: {
