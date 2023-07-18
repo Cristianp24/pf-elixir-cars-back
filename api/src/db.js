@@ -7,9 +7,14 @@ const carsModel = require("./models/cars");
 
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/elixircars`,
-  { logging: false, native: false }
-);
+
+    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/elixircars`,
+    {
+      logging: false, // set to console.log to see the raw SQL queries
+      native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+    }
+  );
+
 
 brandModel(sequelize);
 carModelModel(sequelize);
