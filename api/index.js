@@ -11,3 +11,6 @@ server.listen(PORT, async () => {
   console.log('Server raised in port      ' + PORT);
 })
   
+
+//crear una funcion que llene la base de datos con el json  y luego consumir de ahi 
+// force

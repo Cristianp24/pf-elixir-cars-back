@@ -36,3 +36,7 @@ module.exports = {
   conn: sequelize,
 };
   
+
+// una marca tiene muchos carros  de uno a muchos
+// modelo tiene muchos carros de  uno a muchos
+// paginado de carros 
