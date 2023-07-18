@@ -36,7 +36,7 @@ module.exports = (sequelize, Sequelize) => {
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: true,
         },
-        
+
         kilometraje: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -44,7 +44,7 @@ module.exports = (sequelize, Sequelize) => {
         fichaTecnica:{
             type: DataTypes.JSON,
             allowNull: true,
-        }        
+        }
     })
 
     return Cars;

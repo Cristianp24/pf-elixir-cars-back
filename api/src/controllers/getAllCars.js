@@ -1,5 +1,7 @@
+
 const fs = require('fs');
 const { cars } = require('../db'); // Asegúrate de importar el modelo cars desde db.js
+
 
 async function getAllCars(req, res) {
   try {
@@ -20,19 +22,20 @@ async function getAllCars(req, res) {
         imageUrl1: carData.imageUrl1,
         kilometraje: carData.kilometraje,
         fichaTecnica: carData.fichaTecnica
-      });
-    }
-
-    // Obtener los autos de la base de datos después de haberlos creado
+      })};
+// Obtener los autos de la base de datos después de haberlos creado
     const dbCars = await cars.findAll();
-
-
-    // Responder con la lista completa de autos
+      // Responder con la lista completa de autos
     res.status(200).json(dbCars);
-  } catch (error) {
+      
+      } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Error al obtener los autos' });
   }
 }
 
 module.exports = getAllCars;
+      
+
+    
+  

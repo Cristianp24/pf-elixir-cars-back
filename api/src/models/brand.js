@@ -13,7 +13,9 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false,
         },
 
-    });
+    },{
+        timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
+     });
 
     return Brand;
 };

@@ -12,7 +12,9 @@ module.exports = (sequelize, Sequelize) => {
         type: DataTypes.STRING,
             allowNull: false,
     },
-});
+},{
+    timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
+ });
 
     return CarModel;
 };
