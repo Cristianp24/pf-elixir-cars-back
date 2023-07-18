@@ -3,45 +3,49 @@ const {DataTypes} =  require ('sequelize');
 module.exports = (sequelize, Sequelize) => {
     const Cars = sequelize.define('cars', {
         id:{
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: DataTypes.STRING,
+            // defaultValue: DataTypes.STRING,
             primaryKey: true,
         },
         marca: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         modelo: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         precio: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         estado: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
-        año:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
+        year:{
+            type: DataTypes.STRING,
+            allowNull: true,
         },
         imageUrl: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
         },
+
+        imageUrl: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
+        },
+
         kilometraje: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         fichaTecnica:{
-            type: DataTypes.STRING,
-            allowNull: false,
-        }      
-    },{
-        timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
-     })
+            type: DataTypes.JSON,
+            allowNull: true,
+        }
+    })
 
     return Cars;
 };

@@ -22,4 +22,3 @@ server.use((req, res, next)=>{
 
 server.use('/', router);
 module.exports =  server;
-
