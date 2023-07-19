@@ -1,5 +1,5 @@
 const fs = require("fs");
-async function getCarsByState (req, res) {
+async function getCarsByState(req, res) {
   try {
     const carState = req.query.estado;
     // console.log(carState);
@@ -14,6 +14,6 @@ async function getCarsByState (req, res) {
   } catch (error) {
     res.status(500).json({ error: "Error: no se obtuvieron autos" });
   }
-};
+}
 
 module.exports = getCarsByState;
