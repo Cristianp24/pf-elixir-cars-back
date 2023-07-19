@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize, Sequelize) => {
-    const CarModel = sequelize.define('carModel', {
+    const CarModel = sequelize.define('CarModel', {
         id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -12,9 +12,7 @@ module.exports = (sequelize, Sequelize) => {
         type: DataTypes.STRING,
             allowNull: false,
     },
-},{
-    timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
- });
+});
 
     return CarModel;
 };

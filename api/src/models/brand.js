@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize, Sequelize) => {
-    const Brand = sequelize.define('brand', {
+    const Brand = sequelize.define('Brand', {
         id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -13,9 +13,7 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false,
         },
 
-    },{
-        timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
-     });
+    });
 
     return Brand;
 };

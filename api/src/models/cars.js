@@ -1,50 +1,44 @@
 const {DataTypes} =  require ('sequelize');
 
 module.exports = (sequelize, Sequelize) => {
-    const Cars = sequelize.define('cars', {
+    const Cars = sequelize.define('Cars', {
         id:{
-            type: DataTypes.STRING,
-            // defaultValue: DataTypes.STRING,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
         marca: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         modelo: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         precio: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         estado: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
-        year:{
+        año:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        imageUrl: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
-        imageUrl: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: true,
-        },
-
-        imageUrl: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: true,
-        },
-
         kilometraje: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         fichaTecnica:{
-            type: DataTypes.JSON,
-            allowNull: true,
-        }
+            type: DataTypes.STRING,
+            allowNull: false,
+        }        
     })
 
     return Cars;
