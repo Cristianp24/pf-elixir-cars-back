@@ -3,8 +3,8 @@ const {DataTypes} =  require ('sequelize');
 module.exports = (sequelize, Sequelize) => {
     const Cars = sequelize.define('cars', {
         id:{
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: DataTypes.STRING,
+            // defaultValue: DataTypes.STRING,
             primaryKey: true,
         },
         marca: {
@@ -28,13 +28,23 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true,
         },
         imageUrl: {
+
             type: DataTypes.STRING,
             allowNull: true,
         },
         combustible: {
             type: DataTypes.STRING,
+
+            type: DataTypes.ARRAY(DataTypes.STRING),
+
             allowNull: true,
         },
+
+        imageUrl: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
+        },
+
         kilometraje: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -42,10 +52,14 @@ module.exports = (sequelize, Sequelize) => {
         fichaTecnica:{
             type: DataTypes.JSON,
             allowNull: true,
+
         }      
     },{
         timestamps: true//no necesito la columna extra donde mustra la fecha de creacion.
      })
 
-    return Cars;
-};
+     return Cars;
+        }
+    
+
+
