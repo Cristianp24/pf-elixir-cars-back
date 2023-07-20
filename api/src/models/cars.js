@@ -5,9 +5,9 @@ module.exports = (sequelize) => {
     "cars",
     {
       id: {
-        type: DataTypes.STRING,
-        // defaultValue: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
       },
       // marca: {
       //   type: DataTypes.STRING,
@@ -17,6 +17,11 @@ module.exports = (sequelize) => {
       //   type: DataTypes.STRING,
       //   allowNull: true,
       // },
+      presentacion: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+      },
       precio: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -33,13 +38,11 @@ module.exports = (sequelize) => {
         type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: true,
       },
-
-      imageUrl: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+      kilometraje: {
+        type: DataTypes.STRING,
         allowNull: true,
       },
-
-      kilometraje: {
+      combustible: {
         type: DataTypes.STRING,
         allowNull: true,
       },

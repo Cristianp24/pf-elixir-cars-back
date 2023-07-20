@@ -2,7 +2,8 @@
   {
     "id": "001",
     "marca": "Renault",
-    "modelo": "NEW KWID ZEN 1.0",
+    "modelo": "Kwid",
+    "presentacion": "NEW KWID ZEN 1.0",
     "estado": "Nuevo",
     "year": "2023",
     "precio": "14990",
@@ -27,7 +28,8 @@
   {
     "id": "002",
     "marca": "Renault",
-    "modelo": "NEW STEPWAY INTENSE 1.6 AT",
+    "modelo": "Stepway",
+    "presentacion": "NEW STEPWAY INTENSE 1.6 AT",
     "precio": "25990",
     "estado": "Nuevo",
     "year": "2023",
@@ -52,7 +54,8 @@
   {
     "id": "003",
     "marca": "Renault",
-    "modelo": "ARKANA 1.3T MHEV AT",
+    "modelo": "Arkana",
+    "presentacion": "ARKANA 1.3T MHEV AT",
     "precio": "40990",
     "estado": "Nuevo",
     "year": "2023",
@@ -77,7 +80,8 @@
   {
     "id": "004",
     "marca": "Renault",
-    "modelo": "NEW OROCH CARGO 1.6 DC",
+    "modelo": "Oroch",
+    "presentacion": "NEW OROCH CARGO 1.6 DC",
     "precio": "20990",
     "estado": "Nuevo",
     "year": "2023",
@@ -102,7 +106,8 @@
   {
     "id": "005",
     "marca": "Subaru",
-    "modelo": "Outback 2.5i S ES Touring Extra Full",
+    "modelo": "Outback",
+    "presentacion": "Outback 2.5i S ES Touring Extra Full",
     "precio": "88800",
     "estado": "Nuevo",
     "year": "2023",
@@ -127,7 +132,8 @@
   {
     "id": "006",
     "marca": "Nissan",
-    "modelo": "NEW FRONTIER 2.5 S TDSL DC",
+    "modelo": "Frontier",
+    "presentacion": "NEW FRONTIER 2.5 S TDSL DC",
     "year": "2023",
     "precio": "",
     "estado": "Nuevo",
@@ -152,7 +158,8 @@
   {
     "id": "007",
     "marca": "Nissan",
-    "modelo": " NEW FRONTIER 2.5 S TDSL DC",
+    "modelo": "Frontier",
+    "presentacion": " NEW FRONTIER 2.5 S TDSL DC",
     "year": "2023",
     "precio": "44528",
     "estado": "Nuevo",
@@ -177,7 +184,8 @@
   {
     "id": "008",
     "marca": "Nissan",
-    "modelo": "NEW FRONTIER 2.5 PRO-4X DC 4X4 AT",
+    "modelo": "Frontier",
+    "presentacion": "NEW FRONTIER 2.5 PRO-4X DC 4X4 AT",
     "year": "2023",
     "precio": "46968",
     "estado": "Nuevo",
@@ -202,7 +210,8 @@
   {
     "id": "009",
     "marca": "Nissan",
-    "modelo": "NEW FRONTIER 2.5 LE TDSL DC 4X4",
+    "modelo": "Frontier",
+    "presentacion": "NEW FRONTIER 2.5 LE TDSL DC 4X4",
     "year": "2023",
     "precio": "61598",
     "estado": "Nuevo",
@@ -227,7 +236,8 @@
   {
     "id": "010",
     "marca": "Changan",
-    "modelo": "STAR CARGO FURGON 1.2",
+    "modelo": "Star",
+    "presentacion": "STAR CARGO FURGON 1.2",
     "year": "2023",
     "precio": "13490",
     "estado": "Nuevo",
@@ -252,14 +262,14 @@
   {
     "id": "011",
     "marca": "Changan",
-    "modelo": "STAR PICK UP 1.2 A/A",
+    "modelo": "Star",
+    "presentacion": "STAR PICK UP 1.2 A/A",
     "estado": "Nuevo",
     "year": "2023",
     "precio": "12990",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689456227/E-comerce-Elixircars/changan%20STAR%20PICK%20UP%201.2%20AA/chrome_tN7hHYo0E8_s5vmzw.png"
     ],
-    "imageUrl1": [],
     "combustible": "Nafta",
     "kilometraje": "0",
     "fichaTecnica": {
@@ -278,14 +288,14 @@
   {
     "id": "012",
     "marca": "Changan",
-    "modelo": "NEW CS35 PLUS LUXURY COMFORT 1.4T 5P AT",
+    "modelo": "CS35",
+    "presentacion": "NEW CS35 PLUS LUXURY COMFORT 1.4T 5P AT",
     "estado": "Nuevo",
     "year": "2023",
     "precio": "32990",
     "imagenUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689457591/E-comerce-Elixircars/changan%20NEW%20CS35%20PLUS%20LUXURY%20COMFORT%201.4T%205P%20AT2023/chrome_PItGWQiapP_fkjb2r.png"
     ],
-    "imageUrl1": [],
     "combustible": "Nafta",
     "kilometraje": "0",
     "fichaTecnica": {
@@ -304,14 +314,14 @@
   {
     "id": "013",
     "marca": "Nissan",
-    "modelo": "Nuevo VERSA 1.6 ADVANCE MT",
+    "modelo": "Versa",
+    "presentacion": "Nuevo VERSA 1.6 ADVANCE MT",
     "estado": "Nuevo",
     "year": "2023",
     "precio": "27490",
     "imagenUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689457730/E-comerce-Elixircars/Nissan%20Versa%201.6%20advance%20mt%202023/chrome_fTB9nqNdLI_lrcak0.png"
     ],
-    "imageUrl1": [],
     "combustible": "Nafta",
     "kilometraje": "0",
     "fichaTecnica": {
@@ -330,12 +340,12 @@
   {
     "id": "014",
     "marca": "Subaru",
-    "modelo": "Nuevo WRX 2.4T High 4x4 Extra Full",
+    "modelo": "WRX",
+    "presentacion": "Nuevo WRX 2.4T High 4x4 Extra Full",
     "estado": "Nuevo",
     "year": "2023",
     "precio": "76800",
     "imagenUrl": [],
-    "imageUrl1": [],
     "combustible": "Nafta",
     "kilometraje": "0",
     "fichaTecnica": {
@@ -354,14 +364,14 @@
   {
     "id": "015",
     "marca": "Nissan",
-    "modelo": "X-TRAIL ADVANCE E-POWER 4X4 5P AT",
+    "modelo": "X-Trail",
+    "presentacion": "X-TRAIL ADVANCE E-POWER 4X4 5P AT",
     "estado": "Nuevo",
     "year": "2023",
     "precio": "64990",
     "imagenUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689458029/E-comerce-Elixircars/Nissan%20X-TRAIL%20ADVANCE%20E-POWER%204X4%202023/chrome_u5enlksvb6_sg1xbk.png"
     ],
-    "imageUrl1": [],
     "combustible": "e-Power",
     "kilometraje": "0",
     "fichaTecnica": {
@@ -380,7 +390,8 @@
   {
     "id": "016",
     "marca": "Suzuki",
-    "modelo": "SWIFT 1.2 GLS MHEV",
+    "modelo": "Swift",
+    "presentacion": "SWIFT 1.2 GLS MHEV",
     "precio": "22990",
     "estado": "Nuevo",
     "year": "2023",
@@ -406,7 +417,8 @@
   {
     "id": "017",
     "marca": "Opel",
-    "modelo": "CORSA ELEGANCE 1.2T",
+    "modelo": "Corsa",
+    "presentacion": "CORSA ELEGANCE 1.2T",
     "precio": "27990",
     "estado": "Nuevo",
     "year": "2023",
@@ -432,7 +444,8 @@
   {
     "id": "018",
     "marca": "Opel",
-    "modelo": "COMBO 1.6 FURGON ",
+    "modelo": "Combo",
+    "presentacion": "COMBO 1.6 FURGON ",
     "precio": "26500",
     "estado": "Nuevo",
     "year": "2023",
@@ -458,7 +471,8 @@
   {
     "id": "019",
     "marca": "Suzuki",
-    "modelo": "ALTO 800",
+    "modelo": "Alto",
+    "presentacion": "ALTO 800",
     "precio": "11490",
     "estado": "Nuevo",
     "year": "2023",
@@ -484,7 +498,8 @@
   {
     "id": "020",
     "marca": "Fiat",
-    "modelo": "MOBI TREKKING 1.0 MT",
+    "modelo": "Mobi",
+    "presentacion": "MOBI TREKKING 1.0 MT",
     "precio": "16390",
     "estado": "Nuevo",
     "year": "2023",
@@ -510,14 +525,13 @@
   {
     "id": "1001",
     "marca": "Chevrolet",
-    "modelo": "NEW ONIX PLUS 1.0T PREMIER",
+    "modelo": "Onix",
+    "presentacion": "NEW ONIX PLUS 1.0T PREMIER",
     "estado": "Usado",
     "year": "2022",
     "precio": "23490",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459511/E-comerce-Elixircars/Chevrolet%20Onix%20usadoNEW%20ONIX%20PLUS%201.0T%20PREMIER%202022/chrome_PgmEdBPL3N_b5uhxn.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459511/E-comerce-Elixircars/Chevrolet%20Onix%20usadoNEW%20ONIX%20PLUS%201.0T%20PREMIER%202022/chrome_PgmEdBPL3N_b5uhxn.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459485/E-comerce-Elixircars/Chevrolet%20Onix%20usadoNEW%20ONIX%20PLUS%201.0T%20PREMIER%202022/chrome_wY4YH9ZU8c_syepbo.png"
     ],
     "kilometraje": "33920",
@@ -538,14 +552,13 @@
   {
     "id": "1006",
     "marca": "Volkswagen",
-    "modelo": "SAVEIRO VII 1.6 DC CROSS",
+    "modelo": "Saveiro",
+    "presentacion": "SAVEIRO VII 1.6 DC CROSS",
     "fabricacion": "2018",
     "precio": "17.900",
     "estado": "Usado",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png"
     ],
     "kilometraje": "0",
@@ -566,14 +579,13 @@
   {
     "id": "1007",
     "marca": "Volkswagen",
-    "modelo": "VIRTUS 1.6 CONFORTLINE 4P",
+    "modelo": "Virtus",
+    "presentacion": "VIRTUS 1.6 CONFORTLINE 4P",
     "fabricacion": "2018",
     "precio": "18900",
     "estado": "Usado",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467890/E-comerce-Elixircars/Volkswagen%20VIRTUS%201.6%20CONFORTLINE%204P%202018/chrome_Q8YH64Afdl_ro3co3.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467890/E-comerce-Elixircars/Volkswagen%20VIRTUS%201.6%20CONFORTLINE%204P%202018/chrome_Q8YH64Afdl_ro3co3.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467890/E-comerce-Elixircars/Volkswagen%20VIRTUS%201.6%20CONFORTLINE%204P%202018/chrome_gOLYDzTxOM_swofxh.png"
     ],
     "kilometraje": "53450",
@@ -594,14 +606,14 @@
   {
     "id": "1008",
     "marca": "Volkswagen",
-    "modelo": "NEW GOLF A7 1.4T HIGHLINE 5P AT",
+    "modelo": "Golf",
+    "presentacion": "NEW GOLF A7 1.4T HIGHLINE 5P AT",
     "fabricacion": "2018",
     "precio": "28900",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468177/E-comerce-Elixircars/Volskwagen%20NEW%20GOLF%20A7%201.4T%20HIGHLINE%205P%20AT%202018/chrome_5PbDzdggBm_kbs4ct.png"
     ],
-    "imageUrl1": [""],
     "kilometraje": "94960",
     "ficha tecnica": {
       "motor": "1398",
@@ -620,14 +632,13 @@
   {
     "id": "1009",
     "marca": "Volkswagen",
-    "modelo": "NIVUS 1.0T HIGHLINE AT",
+    "modelo": "Nivus",
+    "presentacion": "NIVUS 1.0T HIGHLINE AT",
     "fabricacion": "2023",
     "precio": "31490",
     "estado": "Usado",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468335/E-comerce-Elixircars/volkswagen%20nivus%201.0%202023%20usado/chrome_v2c44EHEXE_wzwxce.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468335/E-comerce-Elixircars/volkswagen%20nivus%201.0%202023%20usado/chrome_v2c44EHEXE_wzwxce.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468336/E-comerce-Elixircars/volkswagen%20nivus%201.0%202023%20usado/chrome_OimurJoNr1_mwd6ql.png"
     ],
     "kilometraje": "4150",
@@ -648,14 +659,13 @@
   {
     "id": "1010",
     "marca": "Volkswagen",
-    "modelo": "T-CROSS 1.6 HIGHLINE INN AT",
+    "modelo": "T-Cross",
+    "presentacion": "T-CROSS 1.6 HIGHLINE INN AT",
     "fabricacion": "2020",
     "precio": "28690",
     "estado": "Usado",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468553/E-comerce-Elixircars/Volskwagen%20t-cross%201.6%202020%20usado/chrome_a1zVRU7rwg_r2bmnx.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468553/E-comerce-Elixircars/Volskwagen%20t-cross%201.6%202020%20usado/chrome_a1zVRU7rwg_r2bmnx.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468553/E-comerce-Elixircars/Volskwagen%20t-cross%201.6%202020%20usado/chrome_OVu8rPEzSy_xbcctg.png"
     ],
     "kilometraje": "81250",
@@ -676,14 +686,13 @@
   {
     "id": "1016",
     "marca": "Nissan",
-    "modelo": "KICKS EXCLUSIVE 1.6 AT",
+    "modelo": "Kicks",
+    "presentacion": "KICKS EXCLUSIVE 1.6 AT",
     "estado": "Usado",
     "year": "2018",
     "precio": "21900",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468685/E-comerce-Elixircars/Nissan%20KICKS%20EXCLUSIVE%201.6%202018/chrome_vMrQl5T9Ai_tk6upk.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468685/E-comerce-Elixircars/Nissan%20KICKS%20EXCLUSIVE%201.6%202018/chrome_vMrQl5T9Ai_tk6upk.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468685/E-comerce-Elixircars/Nissan%20KICKS%20EXCLUSIVE%201.6%202018/chrome_pAWHePoxmK_ul2avz.png"
     ],
     "combustible": "Nafta",
@@ -704,14 +713,13 @@
   {
     "id": "1017",
     "marca": "Nissan",
-    "modelo": "NEW VERSA 1.6 ADVANCE 4P",
+    "modelo": "Versa",
+    "presentacion": "NEW VERSA 1.6 ADVANCE 4P",
     "estado": "Usado",
     "year": "2022",
     "precio": "24900",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468849/E-comerce-Elixircars/Nissan%20new%20versa%202022%20usado/chrome_UCDNMUVPJA_oqq2ad.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468849/E-comerce-Elixircars/Nissan%20new%20versa%202022%20usado/chrome_UCDNMUVPJA_oqq2ad.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468850/E-comerce-Elixircars/Nissan%20new%20versa%202022%20usado/chrome_orpPO9bcSj_hqblip.png"
     ],
     "combustible": "Nafta",
@@ -732,14 +740,13 @@
   {
     "id": "1018",
     "marca": "Nissan",
-    "modelo": "MARCH 1.6",
+    "modelo": "March",
+    "presentacion": "MARCH 1.6",
     "estado": "Usado",
     "year": "2015",
     "precio": "12200",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689469012/E-comerce-Elixircars/Nissan%20March%202015/chrome_EgosUEiVZj_djywtm.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689469012/E-comerce-Elixircars/Nissan%20March%202015/chrome_EgosUEiVZj_djywtm.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689469012/E-comerce-Elixircars/Nissan%20March%202015/chrome_itI0g9mnOH_m94fw5.png"
     ],
     "combustible": "Nafta",
@@ -760,14 +767,13 @@
   {
     "id": "1011",
     "marca": "Fiat",
-    "modelo": "STRADA PICK UP WORKING 1.4",
+    "modelo": "Strada",
+    "presentacion": "STRADA PICK UP WORKING 1.4",
     "precio": "13900",
     "estado": "Usado",
     "year": "2021",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459143/E-comerce-Elixircars/Fiat%20Strada/msedge_SGPoWEN7py_nsxy1c.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459143/E-comerce-Elixircars/Fiat%20Strada/msedge_SGPoWEN7py_nsxy1c.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459160/E-comerce-Elixircars/Fiat%20Strada/msedge_f4HWOvCtfB_jqkghb.png"
     ],
     "Combustible": "Nafta",
@@ -788,14 +794,13 @@
   {
     "id": "1012",
     "marca": "Fiat",
-    "modelo": "UNO EVO ATTRACTIVE 1.4",
+    "modelo": "Uno",
+    "presentacion": "UNO EVO ATTRACTIVE 1.4",
     "precio": "8990",
     "estado": "Usado",
     "year": "2016",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459204/E-comerce-Elixircars/Fiat%20Uno/msedge_4VaBwgPIqz_eye9rs.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459204/E-comerce-Elixircars/Fiat%20Uno/msedge_4VaBwgPIqz_eye9rs.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459201/E-comerce-Elixircars/Fiat%20Uno/msedge_jxZRt2VK0C_dgogfg.png"
     ],
     "Combustible": "Nafta",
@@ -816,14 +821,13 @@
   {
     "id": "1013",
     "marca": "Fiat",
-    "modelo": "TORO 1.8 FREEDOM",
+    "modelo": "Toro",
+    "presentacion": "TORO 1.8 FREEDOM",
     "precio": "22900",
     "estado": "Usado",
     "year": "2020",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459242/E-comerce-Elixircars/Fiat%20Toro/msedge_Sp6B719hCm_axrrzi.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459242/E-comerce-Elixircars/Fiat%20Toro/msedge_Sp6B719hCm_axrrzi.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459244/E-comerce-Elixircars/Fiat%20Toro/msedge_VcpmIWz6HB_ijo1b9.png"
     ],
     "Combustible": "Nafta",
@@ -844,14 +848,13 @@
   {
     "id": "1014",
     "marca": "Fiat",
-    "modelo": "MOBI EASY POP 1.0",
+    "modelo": "Mobi",
+    "presentacion": "MOBI EASY POP 1.0",
     "precio": "14100",
     "estado": "Usado",
     "year": "2021",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459300/E-comerce-Elixircars/Fiat%20Mobi%20Usado/msedge_PNvqPT3QqP_qj3syf.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459300/E-comerce-Elixircars/Fiat%20Mobi%20Usado/msedge_PNvqPT3QqP_qj3syf.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459303/E-comerce-Elixircars/Fiat%20Mobi%20Usado/msedge_YBs5wFUzT6_qftfqt.png"
     ],
     "Combustible": "Nafta",
@@ -872,14 +875,13 @@
   {
     "id": "1015",
     "marca": "Fiat",
-    "modelo": "MOBI WAY 1.0",
+    "modelo": "Mobi",
+    "presentacion": "MOBI WAY 1.0",
     "precio": "14000",
     "estado": "Usado",
     "year": "2021",
     "imageUrl": [
-      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459334/E-comerce-Elixircars/Fiat%20MOBI%20WAY%201.0/msedge_Zk4chYEP5c_yjnk3j.png"
-    ],
-    "imageUrl1": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459334/E-comerce-Elixircars/Fiat%20MOBI%20WAY%201.0/msedge_Zk4chYEP5c_yjnk3j.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459337/E-comerce-Elixircars/Fiat%20MOBI%20WAY%201.0/msedge_9nEcxMGbtR_bfu7qp.png"
     ],
     "Combustible": "Nafta",

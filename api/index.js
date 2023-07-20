@@ -1,11 +1,11 @@
 const server = require("./src/app.js");
-const getAllCars = require("./src/controllers/getAllCars.js");
 const { conn } = require("./src/db.js");
+const loadApiDataInDb = require("./src/utils/loadApiDataInDb.js");
 
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
   server.listen(3001, async () => {
-    // await getAllCars();
+    await loadApiDataInDb();
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
 });
