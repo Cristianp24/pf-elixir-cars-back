@@ -1,10 +1,10 @@
 const fs = require("fs");
-const db = require("../db"); // Asegúrate de importar el modelo cars desde db.js
+const { cars } = require("../db"); // Asegúrate de importar el modelo cars desde db.js
 
 async function getAllCars(req, res) {
   try {
     // Obtener los autos de la base de datos después de haberlos creado
-    const dbCars = await db.cars.findAll();
+    const dbCars = await cars.findAll();
     // console.log(dbCars);
     // Responder con la lista completa de autos
     res.status(200).json(dbCars);

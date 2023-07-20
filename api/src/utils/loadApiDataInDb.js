@@ -35,11 +35,11 @@ async function loadApiDataInDb() {
       });
 
       // Cargar Car (auto) si no existe
-      const [auto, autoCreado] = await cars.findOrCreate({
-        where: { id, presentacion },
+      const [newCar, carCreated] = await cars.findOrCreate({
+        where: { presentacion },
         defaults: {
-          brandId: marcaBd.id,
           carModelId: modeloBd.id,
+          brandId: marcaBd.id,
           precio,
           estado,
           year,
@@ -50,7 +50,7 @@ async function loadApiDataInDb() {
         },
       });
 
-      if (autoCreado) {
+      if (carCreated) {
         // Si el registro ya existe, aumentar el contador de creados
         createdCount++;
       } else {

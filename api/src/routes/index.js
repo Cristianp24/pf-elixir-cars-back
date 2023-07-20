@@ -13,7 +13,7 @@ const router = Router();
 
 // Rutas para los autos
 router.get("/cars", getAllCars); // Obtener todos los autos
-router.get("/cars/marca", getCarsByMarca); // obtener marcasclear
+router.get("/cars", getCarsByMarca); // obtener marcasclear
 router.get("/state", getCarsByState);
 router.get("/cars/:id", getCarById); // Obtener un auto por su ID
 router.post("/cars", createCar); // Crear un nuevo auto

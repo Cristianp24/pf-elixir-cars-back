@@ -1,4 +1,4 @@
-const { cars, brand } = require("../db");
+const { cars, brand, carModel } = require("../db");
 
 // Controlador para obtener un automóvil por su ID
 async function getCarById(req, res) {
@@ -7,10 +7,13 @@ async function getCarById(req, res) {
 
     // Buscar el automóvil por su ID en la base de datos
     const car = await cars.findByPk(carId, {
-      include: {
-        model: brand,
-        attributes: ["name"],
-      },
+      include: [
+        {
+          model: brand,
+          attributes: ["name"],
+        },
+        { model: carModel, attributes: ["name"] },
+      ],
     });
 
     if (!car) {
