@@ -5,13 +5,12 @@ async function updateCar(req, res) {
   try {
     const carId = req.params.id;
     const {
-      marca,
-      modelo,
       precio,
       estado,
       year,
       imageUrl,
       kilometraje,
+      combustible,
       fichaTecnica,
     } = req.body;
 
@@ -23,17 +22,16 @@ async function updateCar(req, res) {
     }
 
     // Actualizar información del automóvil
-    car.marca = marca;
-    car.modelo = modelo;
-    car.precio = precio;
-    car.estado = estado;
-    car.year = year;
-    car.imageUrl = imageUrl;
-    car.kilometraje = kilometraje;
-    car.fichaTecnica = fichaTecnica;
 
-    // Guardar los cambios en la base de datos
-    await car.save();
+    await car.update({
+      precio,
+      estado,
+      year,
+      imageUrl,
+      kilometraje,
+      combustible,
+      fichaTecnica,
+    });
 
     res.json(car);
   } catch (error) {

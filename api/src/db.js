@@ -14,13 +14,13 @@ Object.values(models).forEach((model) => {
   model(sequelize);
 });
 
-const { brand, carModel, cars } = sequelize.models;
+const { brands, carModels, cars } = sequelize.models;
 
-carModel.hasMany(cars);
-cars.belongsTo(carModel);
+carModels.hasMany(cars);
+cars.belongsTo(carModels), { foreignKey: "carModelId" };
 
-brand.hasMany(cars);
-cars.belongsTo(brand);
+brands.hasMany(cars);
+cars.belongsTo(brands, { foreignKey: "brandId" });
 
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 cars.beforeCreate(async (modelo) => {
@@ -39,8 +39,8 @@ cars.beforeCreate(async (modelo) => {
 });
 
 module.exports = {
-  carModel,
+  carModels,
   cars,
-  brand,
+  brands,
   conn: sequelize,
 };

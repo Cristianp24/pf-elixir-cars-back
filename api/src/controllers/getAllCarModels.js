@@ -1,8 +1,8 @@
-const { carModel } = require("../db");
+const { carModels } = require("../db");
 async function getAllCarModels(req, res) {
   // Obtener los autos de la base de datos después de haberlos creado
   try {
-    const dbCarModels = await carModel.findAll();
+    const dbCarModels = await carModels.findAll();
     // Responder con la lista completa de autos
     res.status(200).json(dbCarModels);
   } catch (error) {

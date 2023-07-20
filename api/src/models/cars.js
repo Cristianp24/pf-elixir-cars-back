@@ -9,14 +9,14 @@ module.exports = (sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      // marca: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true,
-      // },
-      // modelo: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true,
-      // },
+      brandId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      carModelId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       presentacion: {
         type: DataTypes.STRING,
         unique: true,
