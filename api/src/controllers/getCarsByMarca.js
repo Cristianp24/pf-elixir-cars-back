@@ -1,18 +1,27 @@
-const fs = require('fs');
+const fs = require("fs");
+const { cars, brand, carModel } = require("../db");
 
-async function getCarsByMarca(req, res){
-    try{
-        const marcaBuscada = req.query.marca;
+async function getCarsByMarca(req, res) {
+  try {
+    const { marca } = req.query;
+    const marcaBuscada = await brand.findOne({ where: { name: marca } });
 
-        const jsonData = fs.readFileSync('../carsapi.json', 'utf-8');
-        const dataCarApi = JSON.parse(jsonData);
+    const carsByMarca = await cars.findAll({
+      where: {
+        brandId: marcaBuscada.id,
+      },
+      include: [
+        {
+          model: brand,
+          attributes: ["name"],
+        },
+        { model: carModel, attributes: ["name"] },
+      ],
+    });
 
-        const carsByMarca = dataCarApi.filter(car => car.marca === marcaBuscada)
-        
-        res.json(carsByMarca);
-    } catch (error){
-        res.status(500).json({error: 'Error al obtener los autos' });
-    }
+    res.json(carsByMarca);
+  } catch (error) {
+    res.status(500).json({ error: "Error al obtener los autos" });
+  }
 }
 module.exports = getCarsByMarca;
-

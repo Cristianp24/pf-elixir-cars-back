@@ -1,21 +1,18 @@
 // brand.js
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize, Sequelize) => {
-    const Brand = sequelize.define('brand', {
-        id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
-        },
-        name: {
+module.exports = (sequelize) => {
+  sequelize.define(
+    "brand",
+    {
+      name: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false,
-        },
-
-    },{
-        timestamps: false//no necesito la columna extra donde mustra la fecha de creacion.
-     });
-
-    return Brand;
+      },
+    },
+    {
+      timestamps: false, //no necesito la columna extra donde mustra la fecha de creacion.
+    }
+  );
 };
