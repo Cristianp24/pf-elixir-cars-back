@@ -2,12 +2,16 @@ const server = require('./src/app');
 
 const { conn } = require('./src/db.js');
 
+const PORT = process.env.PORT ||3001;
 
 
-const PORT = 3001;
 
-server.listen(PORT, async () => {
+conn.sync({ force: true }).then(() => {
+  server.listen(3001, async () => {
   await conn.sync({force:false});
+
   console.log('Server raised in port      ' + PORT);
 })
   
+});
+
