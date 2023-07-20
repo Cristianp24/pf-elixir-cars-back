@@ -1,7 +1,7 @@
 const {DataTypes} =  require ('sequelize');
 
 module.exports = (sequelize, Sequelize) => {
-    const Cars = sequelize.define('cars', {
+    const cars = sequelize.define('cars', {
         id:{
             type: DataTypes.STRING,
             // defaultValue: DataTypes.STRING,
@@ -58,5 +58,5 @@ module.exports = (sequelize, Sequelize) => {
         timestamps: true//no necesito la columna extra donde mustra la fecha de creacion.
      })
 
-     return Cars;
+     return cars;
         }
