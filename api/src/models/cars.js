@@ -60,6 +60,3 @@ module.exports = (sequelize, Sequelize) => {
 
      return Cars;
         }
-    
-
-

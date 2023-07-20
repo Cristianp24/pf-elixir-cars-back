@@ -14,5 +14,5 @@ async function getCarsByMarca(req, res){
         res.status(500).json({error: 'Error al obtener los autos' });
     }
 }
-module.exports = getCarsByMarca;
 
+module.exports = getCarsByMarca;
