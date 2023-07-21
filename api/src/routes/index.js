@@ -2,6 +2,7 @@ const { Router } = require("express");
 const getAllCars = require("../controllers/getAllCars");
 const getCarsByBrand = require("../controllers/getCarsByBrand");
 const getCarsByState = require("../controllers/getCarsByState");
+const getCarsByPrice  = require("../controllers/getCarsByPrice");
 const getCarById = require("../controllers/getCarById");
 const createCar = require("../controllers/createCar");
 const updateCar = require("../controllers/updateCar");
@@ -15,6 +16,7 @@ const router = Router();
 router.get("/cars", getAllCars); // Obtener todos los autos
 router.get("/carsByBrand", getCarsByBrand); // obtener marcasclear
 router.get("/carsByState", getCarsByState);
+router.get("/cars/byPrice", getCarsByPrice);
 router.get("/cars/:id", getCarById); // Obtener un auto por su ID
 router.post("/cars", createCar); // Crear un nuevo auto
 router.put("/cars/:id", updateCar); // Actualizar un auto existente
