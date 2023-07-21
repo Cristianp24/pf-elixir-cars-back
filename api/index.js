@@ -1,17 +1,14 @@
 const server = require('./src/app');
-
 const { conn } = require('./src/db.js');
-
-const PORT = 3001;
-
+require('dotenv').config()
 
 
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, async () => {
-  await conn.sync({force:false});
 
-  console.log('Server raised in port      ' + PORT);
-})
-  
+
+
+conn.sync({ force : true }).then(() => {
+  server.listen(process.env.PORT, () => {
+    console.log('Server is listening at',process.env.PORT); // eslint-disable-line no-console
+  });
 });
 
