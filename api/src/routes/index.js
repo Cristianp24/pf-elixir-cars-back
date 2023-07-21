@@ -4,7 +4,7 @@ const getAllCars = require('../controllers/getAllCars');
 const getCarById = require('../controllers/getCarById');
 const getCarsByMarca = require('../controllers/getCarsByMarca');
 const createCar = require('../controllers/createCar');
-const updateCar = require('../controllers/updateCar');
+const updateCar = require('../controllers/upDateCar');
 const deleteCar = require('../controllers/deleteCar');
 const router = Router();
 
