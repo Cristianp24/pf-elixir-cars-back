@@ -11,3 +11,6 @@ conn.sync({ force : true }).then(() => {
   });
 });
 
+server.get("/", (req, res) => {
+  res.send("Hello World!");
+});
