@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const getAllCars = require("../controllers/getAllCars");
-const getCarsByMarca = require("../controllers/getCarsByMarca");
+const getCarsByBrand = require("../controllers/getCarsByBrand");
 const getCarsByState = require("../controllers/getCarsByState");
 const getCarById = require("../controllers/getCarById");
 const createCar = require("../controllers/createCar");
@@ -13,8 +13,8 @@ const router = Router();
 
 // Rutas para los autos
 router.get("/cars", getAllCars); // Obtener todos los autos
-router.get("/cars", getCarsByMarca); // obtener marcasclear
-router.get("/state", getCarsByState);
+router.get("/carsByBrand", getCarsByBrand); // obtener marcasclear
+router.get("/carsByState", getCarsByState);
 router.get("/cars/:id", getCarById); // Obtener un auto por su ID
 router.post("/cars", createCar); // Crear un nuevo auto
 router.put("/cars/:id", updateCar); // Actualizar un auto existente

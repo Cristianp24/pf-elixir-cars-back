@@ -1,10 +1,11 @@
-const { cars } = require("../db.js");
+const { cars, brands, carModels } = require("../db.js");
 
 async function createCar(req, res) {
   try {
     const {
       marca,
       modelo,
+      presentacion,
       precio,
       estado,
       year,
@@ -15,12 +16,12 @@ async function createCar(req, res) {
     } = req.body;
 
     // Crear Brand (marca) si no existe
-    const [marcaBd, marcaCreada] = await brand.findOrCreate({
+    const [marcaBd, marcaCreada] = await brands.findOrCreate({
       where: { name: marca },
     });
 
     // Crear CarModel (modelo) si no existe
-    const [modeloBd, modeloCreado] = await carModel.findOrCreate({
+    const [modeloBd, modeloCreado] = await carModels.findOrCreate({
       where: { name: modelo },
     });
 
@@ -30,6 +31,7 @@ async function createCar(req, res) {
       defaults: {
         carModelId: modeloBd.id,
         brandId: marcaBd.id,
+        presentacion,
         precio,
         estado,
         year,

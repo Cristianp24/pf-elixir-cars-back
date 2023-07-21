@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { cars, brand, carModel } = require("../db");
+const { cars, brands, carModels } = require("../db");
 
 // Función para cargar la información del archivo JSON en la base de datos
 async function loadApiDataInDb() {
@@ -25,12 +25,12 @@ async function loadApiDataInDb() {
       } = carData;
 
       // Cargar Brand (marca) si no existe
-      const [marcaBd, marcaCreada] = await brand.findOrCreate({
+      const [marcaBd, marcaCreada] = await brands.findOrCreate({
         where: { name: marca },
       });
 
       // Cargar CarModel (modelo) si no existe
-      const [modeloBd, modeloCreado] = await carModel.findOrCreate({
+      const [modeloBd, modeloCreado] = await carModels.findOrCreate({
         where: { name: modelo },
       });
 

@@ -1,10 +1,10 @@
-const { brand } = require("../db.js");
+const { brands } = require("../db.js");
 async function createBrand(req, res) {
   try {
     const { name } = req.body;
 
     // Crear el nueva marca de automóvil en la base de datos
-    const newBrand = await brand.create({ name });
+    const newBrand = await brands.create({ name });
 
     res.status(201).json(newBrand);
   } catch (error) {

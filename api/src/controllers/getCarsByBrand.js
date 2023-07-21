@@ -1,13 +1,17 @@
 const { Op } = require("sequelize");
 const { cars, brands, carModels } = require("../db");
 
-async function getCarsByState(req, res) {
+async function getCarsByBrand(req, res) {
   try {
-    const { state } = req.query;
+    const { brand } = req.query;
 
-    const carsByState = await cars.findAll({
+    const brandFound = await brands.findOne({
+      where: { name: { [Op.iLike]: brand } },
+    });
+
+    const carsByBrand = await cars.findAll({
       where: {
-        estado: { [Op.iLike]: state },
+        brandId: brandFound.id,
       },
       include: [
         {
@@ -19,10 +23,10 @@ async function getCarsByState(req, res) {
     });
 
     // Envia ambos objetos dentro de un objeto
-    res.json(carsByState);
+    res.json(carsByBrand);
   } catch (error) {
     res.status(500).json({ error: "Error al obtener los autos" });
   }
 }
 
-module.exports = getCarsByState;
+module.exports = getCarsByBrand;

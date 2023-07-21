@@ -14,24 +14,23 @@ Object.values(models).forEach((model) => {
   model(sequelize);
 });
 
-const { brand, carModel, cars } = sequelize.models;
+const { brands, carModels, cars } = sequelize.models;
 
-carModel.hasMany(cars);
-cars.belongsTo(carModel);
+carModels.hasMany(cars);
+cars.belongsTo(carModels), { foreignKey: "carModelId" };
 
-brand.hasMany(cars);
-cars.belongsTo(brand);
+brands.hasMany(cars);
+cars.belongsTo(brands, { foreignKey: "brandId" });
 
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 cars.beforeCreate(async (modelo) => {
   const maxId = await cars.max("id", { where: { estado: modelo.estado } });
+
+  const estado = modelo.estado.toLowerCase();
   // Si el estado es "Nuevo" y no hay registros con estado "Nuevo", iniciamos en 1
   // Si el estado es "Usado" y no hay registros con estado "Usado", iniciamos en 1001
-  if (
-    (modelo.estado === "Nuevo" && !maxId) ||
-    (modelo.estado === "Usado" && !maxId)
-  ) {
-    modelo.id = modelo.estado === "Nuevo" ? 1 : 1001;
+  if ((estado === "nuevo" && !maxId) || (estado === "usado" && !maxId)) {
+    modelo.id = estado === "nuevo" ? 1 : 1001;
   } else {
     // Si hay registros con el mismo estado, incrementamos el id en 1
     modelo.id = maxId + 1;
@@ -39,8 +38,8 @@ cars.beforeCreate(async (modelo) => {
 });
 
 module.exports = {
-  carModel,
+  carModels,
   cars,
-  brand,
+  brands,
   conn: sequelize,
 };
