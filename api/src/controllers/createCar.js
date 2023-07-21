@@ -23,6 +23,9 @@ async function createCar(req, res) {
     // Crear CarModel (modelo) si no existe
     const [modeloBd, modeloCreado] = await carModels.findOrCreate({
       where: { name: modelo },
+      defaults: {
+        brandId: marcaBd.id,
+      },
     });
 
     // Crear el nuevo automóvil en la base de datos

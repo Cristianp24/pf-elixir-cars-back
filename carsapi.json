@@ -17,12 +17,12 @@
       "pasajeros": "5",
       "carroceria": "Hatch",
       "transmision": "manual",
-      "airbag": "4x2",
+      "traccion": "4x2",
       "llantas": "14",
       "potencia": "68 ",
       "puertas": "5",
       "baul": "290",
-      "Airbag": "4"
+      "airbag": "4"
     }
   },
   {
@@ -43,12 +43,12 @@
       "pasajeros": "5",
       "carroceria": "Hatch",
       "transmision": "manual",
-      "airbag": "4x2",
+      "traccion": "4x2",
       "llantas": "16",
       "potencia": "115",
       "puertas": "5",
       "baul": "320",
-      "Airbag": "4"
+      "airbag": "4"
     }
   },
   {
@@ -69,12 +69,12 @@
       "pasajeros": "5",
       "carroceria": "SUV",
       "transmision": "manual",
-      "airbag": "4x2",
+      "traccion": "4x2",
       "llantas": "17",
       "potencia": "140",
       "puertas": "5",
       "baul": "465 lt",
-      "Airbag": "6"
+      "airbag": "6"
     }
   },
   {
@@ -95,12 +95,12 @@
       "pasajeros": "5",
       "carroceria": "PICKUP",
       "transmision": "manual",
-      "airbag": "4x2",
+      "traccion": "4x2",
       "llantas": "16",
       "potencia": "118 ",
       "puertas": "4",
       "baul": "--",
-      "Airbag": "2"
+      "airbag": "2"
     }
   },
   {
@@ -121,12 +121,12 @@
       "pasajeros": "5",
       "carroceria": "SUV",
       "transmision": "manual",
-      "airbag": "4x4",
+      "traccion": "4x4",
       "llantas": "18",
       "potencia": "188",
       "puertas": "5",
       "baul": "512",
-      "Airbag": "7"
+      "airbag": "7"
     }
   },
   {
@@ -135,7 +135,7 @@
     "modelo": "Frontier",
     "presentacion": "NEW FRONTIER 2.5 S TDSL DC",
     "year": "2023",
-    "precio": "",
+    "precio": "45528",
     "estado": "Nuevo",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689453993/E-comerce-Elixircars/Nissan%20Frontier%202023/chrome_wEavvLJIFb_umkaea.png"
@@ -282,7 +282,7 @@
       "potencia": "97",
       "puertas": "2",
       "baul": "-",
-      "airbags": "2"
+      "airbag": "2"
     }
   },
   {
@@ -293,7 +293,7 @@
     "estado": "Nuevo",
     "year": "2023",
     "precio": "32990",
-    "imagenUrl": [
+    "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689457591/E-comerce-Elixircars/changan%20NEW%20CS35%20PLUS%20LUXURY%20COMFORT%201.4T%205P%20AT2023/chrome_PItGWQiapP_fkjb2r.png"
     ],
     "combustible": "Nafta",
@@ -308,7 +308,7 @@
       "potencia": "155",
       "puertas": "5",
       "baul": "403",
-      "airbags": "6"
+      "airbag": "6"
     }
   },
   {
@@ -319,7 +319,7 @@
     "estado": "Nuevo",
     "year": "2023",
     "precio": "27490",
-    "imagenUrl": [
+    "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689457730/E-comerce-Elixircars/Nissan%20Versa%201.6%20advance%20mt%202023/chrome_fTB9nqNdLI_lrcak0.png"
     ],
     "combustible": "Nafta",
@@ -334,7 +334,7 @@
       "potencia": "118",
       "puertas": "4",
       "baul": "482",
-      "airbags": "6"
+      "airbag": "6"
     }
   },
   {
@@ -345,7 +345,7 @@
     "estado": "Nuevo",
     "year": "2023",
     "precio": "76800",
-    "imagenUrl": [],
+    "imageUrl": [],
     "combustible": "Nafta",
     "kilometraje": "0",
     "fichaTecnica": {
@@ -358,7 +358,7 @@
       "potencia": "275",
       "puertas": "4",
       "baul": "411",
-      "airbags": "7"
+      "airbag": "7"
     }
   },
   {
@@ -369,7 +369,7 @@
     "estado": "Nuevo",
     "year": "2023",
     "precio": "64990",
-    "imagenUrl": [
+    "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689458029/E-comerce-Elixircars/Nissan%20X-TRAIL%20ADVANCE%20E-POWER%204X4%202023/chrome_u5enlksvb6_sg1xbk.png"
     ],
     "combustible": "e-Power",
@@ -384,7 +384,7 @@
       "potencia": "205",
       "puertas": "5",
       "baul": "1298",
-      "airbags": "6"
+      "airbag": "6"
     }
   },
   {
@@ -552,17 +552,17 @@
     "marca": "Volkswagen",
     "modelo": "Saveiro",
     "presentacion": "SAVEIRO VII 1.6 DC CROSS",
-    "fabricacion": "2018",
-    "precio": "17.900",
+    "year": "2018",
+    "precio": "17900",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png"
     ],
+    "combustible": "Nafta",
     "kilometraje": "0",
-    "ficha tecnica": {
+    "fichaTecnica": {
       "motor": "1600",
-      "combustible": "Nafta",
       "pasajeros": "5",
       "carroceria": "Pick Up",
       "transmisión": "Manual",
@@ -571,7 +571,7 @@
       "potencia": "110 HP",
       "puertas": "4",
       "baul": "",
-      "airbags": "2"
+      "airbag": "2"
     }
   },
   {
@@ -579,17 +579,17 @@
     "marca": "Volkswagen",
     "modelo": "Virtus",
     "presentacion": "VIRTUS 1.6 CONFORTLINE 4P",
-    "fabricacion": "2018",
+    "year": "2018",
     "precio": "18900",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467890/E-comerce-Elixircars/Volkswagen%20VIRTUS%201.6%20CONFORTLINE%204P%202018/chrome_Q8YH64Afdl_ro3co3.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467890/E-comerce-Elixircars/Volkswagen%20VIRTUS%201.6%20CONFORTLINE%204P%202018/chrome_gOLYDzTxOM_swofxh.png"
     ],
+    "combustible": "Nafta",
     "kilometraje": "53450",
-    "ficha tecnica": {
+    "fichaTecnica": {
       "motor": "1598",
-      "combustible": "Nafta",
       "pasajeros": "5",
       "carroceria": "Sedan",
       "transmisión": "Manual",
@@ -598,7 +598,7 @@
       "potencia": "110 HP",
       "puertas": "4",
       "baul": "521lt",
-      "airbags": "4"
+      "airbag": "4"
     }
   },
   {
@@ -606,16 +606,16 @@
     "marca": "Volkswagen",
     "modelo": "Golf",
     "presentacion": "NEW GOLF A7 1.4T HIGHLINE 5P AT",
-    "fabricacion": "2018",
+    "year": "2018",
     "precio": "28900",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468177/E-comerce-Elixircars/Volskwagen%20NEW%20GOLF%20A7%201.4T%20HIGHLINE%205P%20AT%202018/chrome_5PbDzdggBm_kbs4ct.png"
     ],
     "kilometraje": "94960",
-    "ficha tecnica": {
+    "combustible": "Nafta",
+    "fichaTecnica": {
       "motor": "1398",
-      "combustible": "Nafta",
       "pasajeros": "5",
       "carroceria": "Hatch",
       "transmisión": "Automatica",
@@ -624,7 +624,7 @@
       "potencia": "150 HP",
       "puertas": "5",
       "baul": "380lt",
-      "airbags": "7"
+      "airbag": "7"
     }
   },
   {
@@ -632,17 +632,17 @@
     "marca": "Volkswagen",
     "modelo": "Nivus",
     "presentacion": "NIVUS 1.0T HIGHLINE AT",
-    "fabricacion": "2023",
+    "year": "2023",
     "precio": "31490",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468335/E-comerce-Elixircars/volkswagen%20nivus%201.0%202023%20usado/chrome_v2c44EHEXE_wzwxce.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468336/E-comerce-Elixircars/volkswagen%20nivus%201.0%202023%20usado/chrome_OimurJoNr1_mwd6ql.png"
     ],
+    "combustible": "Nafta",
     "kilometraje": "4150",
-    "ficha tecnica": {
+    "fichaTecnica": {
       "motor": "999",
-      "combustible": "Nafta",
       "pasajeros": "5",
       "carroceria": "SUV",
       "transmisión": "Automatica",
@@ -651,7 +651,7 @@
       "potencia": "114 HP",
       "puertas": "5",
       "baul": "415lt",
-      "airbags": "6"
+      "airbag": "6"
     }
   },
   {
@@ -659,17 +659,17 @@
     "marca": "Volkswagen",
     "modelo": "T-Cross",
     "presentacion": "T-CROSS 1.6 HIGHLINE INN AT",
-    "fabricacion": "2020",
+    "year": "2020",
     "precio": "28690",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468553/E-comerce-Elixircars/Volskwagen%20t-cross%201.6%202020%20usado/chrome_a1zVRU7rwg_r2bmnx.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689468553/E-comerce-Elixircars/Volskwagen%20t-cross%201.6%202020%20usado/chrome_OVu8rPEzSy_xbcctg.png"
     ],
+    "combustible": "Nafta",
     "kilometraje": "81250",
-    "ficha tecnica": {
+    "fichaTecnica": {
       "motor": "1598",
-      "combustible": "Nafta",
       "pasajeros": "5",
       "carroceria": "SUV",
       "transmisión": "Automatica",
@@ -678,7 +678,7 @@
       "potencia": "110 HP",
       "puertas": "5",
       "baul": "455lt",
-      "airbags": "6"
+      "airbag": "6"
     }
   },
   {
@@ -774,19 +774,19 @@
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459143/E-comerce-Elixircars/Fiat%20Strada/msedge_SGPoWEN7py_nsxy1c.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459160/E-comerce-Elixircars/Fiat%20Strada/msedge_f4HWOvCtfB_jqkghb.png"
     ],
-    "Combustible": "Nafta",
-    "Kilometraje": "99000",
-    "Ficha tecnica": {
+    "combustible": "Nafta",
+    "kilometraje": "99000",
+    "fichaTecnica": {
       "Motor": "1368",
       "Pasajeros": "5",
-      "Carroceria": "Pickup",
-      "Transmision": "Manual",
+      "carroceria": "Pickup",
+      "transmision": "Manual",
       "Traccion": "4x2",
       "Llantas": "14",
       "Potencia": "85",
       "Puertas": "2",
       "Baul": "--",
-      "Airbags": "2"
+      "airbag": "2"
     }
   },
   {
@@ -801,19 +801,19 @@
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459204/E-comerce-Elixircars/Fiat%20Uno/msedge_4VaBwgPIqz_eye9rs.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459201/E-comerce-Elixircars/Fiat%20Uno/msedge_jxZRt2VK0C_dgogfg.png"
     ],
-    "Combustible": "Nafta",
-    "Kilometraje": "98000",
-    "Ficha tecnica": {
+    "combustible": "Nafta",
+    "kilometraje": "98000",
+    "fichaTecnica": {
       "Motor": "1368",
       "Pasajeros": "5",
-      "Carroceria": "HATCH",
-      "Transmision": "Manual",
+      "carroceria": "HATCH",
+      "transmision": "Manual",
       "Traccion": "4x2",
       "Llantas": "14",
       "Potencia": "85",
       "Puertas": "5",
       "Baul": "280",
-      "Airbags": "2"
+      "airbag": "2"
     }
   },
   {
@@ -828,19 +828,19 @@
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459242/E-comerce-Elixircars/Fiat%20Toro/msedge_Sp6B719hCm_axrrzi.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459244/E-comerce-Elixircars/Fiat%20Toro/msedge_VcpmIWz6HB_ijo1b9.png"
     ],
-    "Combustible": "Nafta",
-    "Kilometraje": "61000",
-    "Ficha tecnica": {
+    "combustible": "Nafta",
+    "kilometraje": "61000",
+    "fichaTecnica": {
       "Motor": "1747",
       "Pasajeros": "5",
-      "Carroceria": "Pickup",
-      "Transmision": "Automatica",
+      "carroceria": "Pickup",
+      "transmision": "Automatica",
       "Traccion": "4x2",
       "Llantas": "16",
       "Potencia": "130",
       "Puertas": "4",
       "Baul": "--",
-      "Airbags": "7"
+      "airbag": "7"
     }
   },
   {
@@ -855,19 +855,19 @@
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459300/E-comerce-Elixircars/Fiat%20Mobi%20Usado/msedge_PNvqPT3QqP_qj3syf.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459303/E-comerce-Elixircars/Fiat%20Mobi%20Usado/msedge_YBs5wFUzT6_qftfqt.png"
     ],
-    "Combustible": "Nafta",
-    "Kilometraje": "8000",
-    "Ficha tecnica": {
+    "combustible": "Nafta",
+    "kilometraje": "8000",
+    "fichaTecnica": {
       "Motor": "1000",
       "Pasajeros": "5",
-      "Carroceria": "HATCH",
-      "Transmision": "Manual",
+      "carroceria": "HATCH",
+      "transmision": "Manual",
       "Traccion": "4x2",
       "Llantas": "14",
       "Potencia": "73",
       "Puertas": "5",
       "Baul": "235",
-      "Airbags": "2"
+      "airbag": "2"
     }
   },
   {
@@ -882,19 +882,100 @@
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459334/E-comerce-Elixircars/Fiat%20MOBI%20WAY%201.0/msedge_Zk4chYEP5c_yjnk3j.png",
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689459337/E-comerce-Elixircars/Fiat%20MOBI%20WAY%201.0/msedge_9nEcxMGbtR_bfu7qp.png"
     ],
-    "Combustible": "Nafta",
-    "Kilometraje": "26830",
-    "Ficha tecnica": {
+    "combustible": "Nafta",
+    "kilometraje": "26830",
+    "fichaTecnica": {
       "Motor": "999",
       "Pasajeros": "5",
-      "Carroceria": "HATCH",
-      "Transmision": "Manual",
+      "carroceria": "HATCH",
+      "transmision": "Manual",
       "Traccion": "4x2",
       "Llantas": "14",
       "Potencia": "73",
       "Puertas": "5",
       "Baul": "235",
-      "Airbags": "2"
+      "airbag": "2"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Chery",
+    "modelo": "Tiggo",
+    "presentacion": "Tiggo 7 1.5T PRO Luxury AT",
+    "precio": "23900",
+    "estado": "Usado",
+    "year": "2021",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689966536/E-comerce-Elixircars/Chery%20Tiggo%207%20pro/chrome_Ctxpfy5MCc_q8odnn.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689966536/E-comerce-Elixircars/Chery%20Tiggo%207%20pro/chrome_Ctxpfy5MCc_q8odnn.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "62000",
+    "fichaTecnica": {
+      "Motor": "1500",
+      "Pasajeros": "6",
+      "carroceria": "SUV",
+      "transmision": "Automatica",
+      "Traccion": "4x2",
+      "Llantas": "17",
+      "Potencia": "-",
+      "Puertas": "4",
+      "Baul": "600",
+      "airbag": "6"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Chery",
+    "modelo": "QQ",
+    "presentacion": "QQ 311 1.1 full",
+    "precio": "6300",
+    "estado": "Usado",
+    "year": "2013",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689967293/E-comerce-Elixircars/Chery%20QQ%20311%201.1%20full/chrome_heQvXv3PGN_awt9qr.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689967272/E-comerce-Elixircars/Chery%20QQ%20311%201.1%20full/chrome_fFmHUM53RE_ictawl.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "110000",
+    "fichaTecnica": {
+      "Motor": "9000",
+      "Pasajeros": "5",
+      "carroceria": "HATCH",
+      "transmision": "Manual",
+      "Traccion": "4x2",
+      "Llantas": "15",
+      "Potencia": "-",
+      "Puertas": "5",
+      "Baul": "320",
+      "airbag": "-"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Ford",
+    "modelo": "Nueva Ecosport",
+    "presentacion": "NUEVA ECOSPORT SE 1.6 MT",
+    "precio": "15700",
+    "estado": "Usado",
+    "year": "2017",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689978911/E-comerce-Elixircars2/Ford%20Ecosport%201.6%20Se%20110cv%204x2/chrome_ZAizNfoWxf_t029fe.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689978911/E-comerce-Elixircars2/Ford%20Ecosport%201.6%20Se%20110cv%204x2/chrome_1Va3h56J8h_l900zl.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "124000",
+    "fichaTecnica": {
+      "Motor": "1600",
+      "Pasajeros": "5",
+      "Carroceria": "SUV",
+      "Transmision": "Manual",
+      "Traccion": "4x2",
+      "Llantas": "15",
+      "Potencia": "98",
+      "Puertas": "5",
+      "Baul": "320",
+      "airbag": "2"
     }
   }
 ]

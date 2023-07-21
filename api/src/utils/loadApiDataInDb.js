@@ -32,6 +32,9 @@ async function loadApiDataInDb() {
       // Cargar CarModel (modelo) si no existe
       const [modeloBd, modeloCreado] = await carModels.findOrCreate({
         where: { name: modelo },
+        defaults: {
+          brandId: marcaBd.id,
+        },
       });
 
       // Cargar Car (auto) si no existe
