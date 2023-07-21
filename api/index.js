@@ -1,7 +1,7 @@
 const server = require('./src/app');
 const { conn } = require('./src/db.js');
-require('dotenv').config()
-const PORT = process.env.DB_PORT || 3001;
+require('dotenv').config();
+const { PORT } = process.env;
 
 
 
@@ -11,6 +11,3 @@ conn.sync({ force : true }).then(() => {
   });
 });
 
-server.get("/", (req, res) => {
-  res.send("Hello World!");
-});
