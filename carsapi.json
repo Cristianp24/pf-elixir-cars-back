@@ -69,7 +69,7 @@
       "pasajeros": "5",
       "carroceria": "SUV",
       "transmision": "manual",
-      "airbag": "4x2",
+      "traccion": "4x2",
       "llantas": "17",
       "potencia": "140",
       "puertas": "5",
@@ -135,7 +135,7 @@
     "modelo": "Frontier",
     "presentacion": "NEW FRONTIER 2.5 S TDSL DC",
     "year": "2023",
-    "precio": "",
+    "precio": "45528",
     "estado": "Nuevo",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689453993/E-comerce-Elixircars/Nissan%20Frontier%202023/chrome_wEavvLJIFb_umkaea.png"
