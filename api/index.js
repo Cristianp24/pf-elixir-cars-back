@@ -2,7 +2,7 @@ const server = require('./src/app');
 
 const { conn } = require('./src/db.js');
 
-const PORT = process.env.PORT ||3001;
+const PORT = 3001;
 
 
 
