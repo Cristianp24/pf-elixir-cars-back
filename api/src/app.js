@@ -6,20 +6,22 @@ require("./db.js");
 
 const server = express();
 
-server.use((req, res, next)=>{
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-  );
-  res.header(
-      'Access-Control-Allow-Methods',
-      'GET, POST, OPTIONS, PUT, DELETE'
-  );
-  next();
+const { v4 } = require('uuid');
+
+server.get('/api', (req, res) => {
+  const path = `/api/item/${v4()}`;
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+});
+
+server.get('/api/item/:slug', (req, res) => {
+  const { slug } = req.params;
+  res.end(`Item: ${slug}`);
 });
 
 server.use('/', router);
+
+
 module.exports =  server;
 
