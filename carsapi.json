@@ -553,7 +553,7 @@
     "modelo": "Saveiro",
     "presentacion": "SAVEIRO VII 1.6 DC CROSS",
     "year": "2018",
-    "precio": "17.900",
+    "precio": "17900",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png",
@@ -949,6 +949,172 @@
       "Puertas": "5",
       "Baul": "320",
       "airbag": "-"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Ford",
+    "modelo": "Nueva Ecosport",
+    "presentacion": "NUEVA ECOSPORT SE 1.6 MT",
+    "precio": "15700",
+    "estado": "Usado",
+    "year": "2017",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689978911/E-comerce-Elixircars2/Ford%20Ecosport%201.6%20Se%20110cv%204x2/chrome_ZAizNfoWxf_t029fe.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689978911/E-comerce-Elixircars2/Ford%20Ecosport%201.6%20Se%20110cv%204x2/chrome_1Va3h56J8h_l900zl.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "124000",
+    "fichaTecnica": {
+      "Motor": "1600",
+      "Pasajeros": "5",
+      "Carroceria": "SUV",
+      "Transmision": "Manual",
+      "Traccion": "4x2",
+      "Llantas": "15",
+      "Potencia": "98",
+      "Puertas": "5",
+      "Baul": "320",
+      "airbag": "2"
+    }
+  },
+  {
+    "id": "40",
+    "marca": "Chevrolet",
+    "modelo": "S 10",
+    "presentacion": "NUEVA ECOSPORT SE 1.6 MT",
+    "precio": "60490",
+    "estado": "Nuevo",
+    "year": "2023",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689980589/E-comerce-Elixircars2/Chevrolet%20S%2010%20NUEVA%20S10%202.8%20LTZ%20TDSL%20DC%20AT/chrome_tylr0PwT7n_-_copia_advbzc.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689980589/E-comerce-Elixircars2/Chevrolet%20S%2010%20NUEVA%20S10%202.8%20LTZ%20TDSL%20DC%20AT/chrome_ATlvyy3jRp_vh1cdo.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "0",
+    "fichaTecnica": {
+      "Motor": "2776",
+      "Pasajeros": "5",
+      "Carroceria": "PICKUP",
+      "Transmision": "Automatica",
+      "Traccion": "4x4",
+      "Llantas": "18",
+      "Potencia": "200",
+      "Puertas": "4",
+      "Baul": "-",
+      "airbag": "6"
+    }
+  },
+  {
+    "id": "",
+    "marca": "Kia",
+    "modelo": "Rio",
+    "presentacion": "NUEVO RIO 1.4 EX PLUS 4P MT",
+    "precio": "20300",
+    "estado": "Usado",
+    "year": "2019",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689981102/E-comerce-Elixircars2/Kia%20RIO%20NUEVO%20RIO%201.4%20EX%20PLUS%204P%20MT/chrome_UCl7HQvPdI_wjlym8.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689981102/E-comerce-Elixircars2/Kia%20RIO%20NUEVO%20RIO%201.4%20EX%20PLUS%204P%20MT/chrome_nhVbXGekaN_lgofuv.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "72000",
+    "fichaTecnica": {
+      "Motor": "1400",
+      "Pasajeros": "5",
+      "Carroceria": "SEDAN",
+      "Transmision": "Mnnual",
+      "Traccion": "4x2",
+      "Llantas": "17",
+      "Potencia": "100",
+      "Puertas": "4",
+      "Baul": "475",
+      "airbag": "6"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Renault",
+    "modelo": "KWID",
+    "presentacion": "NEW KWID INTENS 1.0",
+    "precio": "12900",
+    "estado": "Usado",
+    "year": "2022",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690048503/E-comerce-Elixircars2/Renault%20Kwid%20NEW%20KWID%20INTENS%201.0%202022/chrome_nlYiwaxLAW_bwdv6i.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690048502/E-comerce-Elixircars2/Renault%20Kwid%20NEW%20KWID%20INTENS%201.0%202022/chrome_mKMmx6gRFU_out2ka.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690048501/E-comerce-Elixircars2/Renault%20Kwid%20NEW%20KWID%20INTENS%201.0%202022/chrome_WgbiQGDYHX_h3gmtf.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "35190",
+    "fichaTecnica": {
+      "Motor": "999",
+      "Pasajeros": "5",
+      "Carroceria": "HATCH",
+      "Transmision": "Mnnual",
+      "Traccion": "4x2",
+      "Llantas": "14",
+      "Potencia": "68",
+      "Puertas": "5",
+      "Baul": "290",
+      "airbag": "4"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Citroen",
+    "modelo": "Citroen C3",
+    "presentacion": "NEW C3 1.2 SHINE 82 HP",
+    "precio": "17490",
+    "estado": "Usado",
+    "year": "2018",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049309/E-comerce-Elixircars/CITROEN%20C3%20NEW%20C3%201.2%20SHINE%2082%20HP/chrome_JovnukoJeN_rwtm1a.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049309/E-comerce-Elixircars/CITROEN%20C3%20NEW%20C3%201.2%20SHINE%2082%20HP/chrome_KnvX9sDnk6_hmrf0p.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049309/E-comerce-Elixircars/CITROEN%20C3%20NEW%20C3%201.2%20SHINE%2082%20HP/chrome_E1f8j0m2g9_v1lyrl.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049308/E-comerce-Elixircars/CITROEN%20C3%20NEW%20C3%201.2%20SHINE%2082%20HP/chrome_WgbiQGDYHX_ui78yg.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "83000",
+    "fichaTecnica": {
+      "Motor": "1199",
+      "Pasajeros": "5",
+      "Carroceria": "HATCH",
+      "Transmision": "Mnnual",
+      "Traccion": "4x2",
+      "Llantas": "16",
+      "Potencia": "82",
+      "Puertas": "5",
+      "Baul": "300",
+      "airbag": "6"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Citroen",
+    "modelo": "Aircross",
+    "presentacion": "AIRCROSS 1.6 FEEL 5P",
+    "precio": "15900",
+    "estado": "Usado",
+    "year": "2017",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049813/E-comerce-Elixircars/CITROEN%20Aircross%20AIRCROSS%201.6%20FEEL%205P/chrome_LIkD4qH2ku_bm5y7v.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049813/E-comerce-Elixircars/CITROEN%20Aircross%20AIRCROSS%201.6%20FEEL%205P/chrome_DuuYRbGY4O_k3bnxk.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1690049814/E-comerce-Elixircars/CITROEN%20Aircross%20AIRCROSS%201.6%20FEEL%205P/chrome_eaBz6qMh8z_jbgv2d.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "88000",
+    "fichaTecnica": {
+      "Motor": "1600",
+      "Pasajeros": "5",
+      "Carroceria": "SUV",
+      "Transmision": "Manual",
+      "Traccion": "4x2",
+      "Llantas": "16",
+      "Potencia": "111",
+      "Puertas": "5",
+      "Baul": "--",
+      "airbag": "2"
     }
   }
 ]

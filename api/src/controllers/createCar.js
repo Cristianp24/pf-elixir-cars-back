@@ -15,6 +15,46 @@ async function createCar(req, res) {
       fichaTecnica,
     } = req.body;
 
+    //validacion
+    if (!marca ||!modelo ||!presentacion ||!precio ||!estado ||!year ||!imageUrl ||!kilometraje ||!combustible ||!fichaTecnica) {
+      return res.status(400).json({error: "Todos los campos son obligatorios, debe llenarlos correctamente"})
+    }
+
+    if (typeof precio !== "number" || precio <= 0) {
+      return res.status(400).json({ error: "El precio debe ser un número positivo" });
+    }
+
+    const estadoRegex = /^(nuevo|usado)$/i;
+    if (!estadoRegex.test(estado)) {
+      return res.status(400).json({ error: "El estado debe ser 'nuevo' o 'usado'" });
+    }
+
+    const currentYear = new Date().getFullYear();
+    if (typeof year !== "number" || year < 2010 || year > currentYear) {
+      return res.status(400).json({ error: "Año inválido" });
+    }
+
+    const imageUrlRegex = /^(http|https):\/\/[^\s/$.?#].[^\s]*$/i;
+    if (!imageUrlRegex.test(imageUrl)) {
+      return res.status(400).json({ error: "La URL de la imagen no es válida" });
+    }
+
+    if ( //validacion para que ficha tecnica contenga estos datos especificos
+      typeof fichaTecnica !== "object" ||
+      !fichaTecnica.Motor ||
+      !fichaTecnica.Pasajeros ||
+      !fichaTecnica.Carroceria ||
+      !fichaTecnica.Transmision ||
+      !fichaTecnica.Traccion ||
+      !fichaTecnica.Llantas ||
+      !fichaTecnica.Potencia ||
+      !fichaTecnica.Puertas ||
+      !fichaTecnica.Baul ||
+      !fichaTecnica.airbag
+    ) {
+      return res.status(400).json({ error: "La ficha técnica es inválida" });
+    }
+
     // Crear Brand (marca) si no existe
     const [marcaBd, marcaCreada] = await brands.findOrCreate({
       where: { name: marca },
