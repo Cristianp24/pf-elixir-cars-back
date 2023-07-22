@@ -1,12 +1,10 @@
 const fs = require("fs");
-const path = require("path");
 const { cars, brands, carModels } = require("../db");
 
 // Función para cargar la información del archivo JSON en la base de datos
 async function loadApiDataInDb() {
   try {
-    const filePath = path.join(__dirname, "api", "carsapi.json");
-    const apiData = fs.readFileSync(filePath, "utf-8");
+    const apiData = fs.readFileSync("../carsapi.json", "utf-8");
     const data = JSON.parse(apiData);
     let createdCount = 0;
     let foundCount = 0;
