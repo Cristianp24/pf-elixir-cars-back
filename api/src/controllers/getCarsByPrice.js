@@ -1,5 +1,5 @@
 const { cars, brands, carModels } = require("../db");
-const { Op } = require('sequelize');
+const { Op } = require("sequelize");
 
 async function getCarsByPrice(req, res) {
   try {
@@ -30,9 +30,8 @@ async function getCarsByPrice(req, res) {
 
     res.json(carsByPrice);
   } catch (error) {
-    
     res.status(500).json({ error: "Error al obtener los autos" });
   }
 }
-// 
+//
 module.exports = getCarsByPrice;

@@ -22,6 +22,9 @@ cars.belongsTo(carModels), { foreignKey: "carModelId" };
 brands.hasMany(cars);
 cars.belongsTo(brands, { foreignKey: "brandId" });
 
+brands.hasMany(carModels);
+carModels.belongsTo(brands, { foreignKey: "brandId" });
+
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 cars.beforeCreate(async (modelo) => {
   const maxId = await cars.max("id", { where: { estado: modelo.estado } });

@@ -553,7 +553,7 @@
     "modelo": "Saveiro",
     "presentacion": "SAVEIRO VII 1.6 DC CROSS",
     "year": "2018",
-    "precio": "17.900",
+    "precio": "17900",
     "estado": "Usado",
     "imageUrl": [
       "https://res.cloudinary.com/doobpmn9q/image/upload/v1689467497/E-comerce-Elixircars/Volkswagen%20Saveiro%202018/chrome_Qu5IwU2rHS_pz2z3y.png",
@@ -949,6 +949,33 @@
       "Puertas": "5",
       "Baul": "320",
       "airbag": "-"
+    }
+  },
+  {
+    "id": "1016",
+    "marca": "Ford",
+    "modelo": "Nueva Ecosport",
+    "presentacion": "NUEVA ECOSPORT SE 1.6 MT",
+    "precio": "15700",
+    "estado": "Usado",
+    "year": "2017",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689978911/E-comerce-Elixircars2/Ford%20Ecosport%201.6%20Se%20110cv%204x2/chrome_ZAizNfoWxf_t029fe.png",
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1689978911/E-comerce-Elixircars2/Ford%20Ecosport%201.6%20Se%20110cv%204x2/chrome_1Va3h56J8h_l900zl.png"
+    ],
+    "combustible": "Nafta",
+    "kilometraje": "124000",
+    "fichaTecnica": {
+      "Motor": "1600",
+      "Pasajeros": "5",
+      "Carroceria": "SUV",
+      "Transmision": "Manual",
+      "Traccion": "4x2",
+      "Llantas": "15",
+      "Potencia": "98",
+      "Puertas": "5",
+      "Baul": "320",
+      "airbag": "2"
     }
   }
 ]
