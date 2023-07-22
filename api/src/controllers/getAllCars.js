@@ -1,4 +1,4 @@
-const fs = require("fs");
+
 const { cars, brands, carModels } = require("../db"); // Asegúrate de importar el modelo cars desde db.js
 
 async function getAllCars(req, res) {
