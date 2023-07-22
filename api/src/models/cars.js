@@ -24,6 +24,7 @@ module.exports = (sequelize) => {
       },
       precio: {
         type: DataTypes.FLOAT,
+
         allowNull: true,
       },
       estado: {
@@ -39,7 +40,7 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       kilometraje: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       combustible: {
