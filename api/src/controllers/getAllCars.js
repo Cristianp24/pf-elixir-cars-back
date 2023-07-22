@@ -1,24 +1,31 @@
-const fs = require('fs')
+const fs = require("fs");
+const { cars, brands, carModels } = require("../db"); // Asegúrate de importar el modelo cars desde db.js
 
+async function getAllCars(req, res) {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
 
-async function getAllCars(req, res){
-    try{
-      
-        const jsonData = fs.readFileSync('../carsapi.json', 'utf-8');
-   
-        const dataCarApi = JSON.parse(jsonData);
+    const offset = (page - 1) * limit;
 
-          
-        res.status(200).json(dataCarApi);
-    }   catch (error){
-        console.error(error);
-        res.status(500).json({error: 'Error al obtener los autos' });
-    }
+    // Obtener los autos de la base de datos después de haberlos creado
+    const dbCars = await cars.findAll({
+      limit: limit,
+      offset: offset,
+      include: [
+        {
+          model: brands,
+          attributes: ["name"],
+        },
+        { model: carModels, attributes: ["name"] },
+      ],
+    });
+
+    // Responder con la lista completa de autos
+    res.status(200).json(dbCars);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al obtener los autos" });
+  }
 }
- 
-
-  
-      
-        
-  
 module.exports = getAllCars;
