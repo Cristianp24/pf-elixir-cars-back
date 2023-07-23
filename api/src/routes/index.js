@@ -12,6 +12,9 @@ const getAllCarModels = require("../controllers/getAllCarModels");
 const getCarModelsByBrand = require("../controllers/getCarModelsByBrand");
 const getCarsByYear = require("../controllers/getCarsByYear");
 const getCarsByKm = require("../controllers/getCarsByKm");
+const registerUser = require("../controllers/registerUser");
+const loginUser = require("../controllers/loginUser");
+const auth = require("../../middleware/auth");
 
 const router = Router();
 
@@ -33,5 +36,11 @@ router.get("/brands", getAllBrands); // Obtener todas las marcas
 // Rutas para los modelos
 router.get("/carModels", getAllCarModels); // Obtener todas los modelos de automóviles
 router.get("/carModels/byBrand", getCarModelsByBrand); // Obtener modelos de automóviles por marca
+
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/welcome", auth, (req, res) => {
+  res.status(200).send("Welcome 🙌 ");
+});
 
 module.exports = router;
