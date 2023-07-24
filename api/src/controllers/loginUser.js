@@ -1,6 +1,8 @@
 const { users } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+
+
 async function loginUser(req, res) {
     const { email, password } = req.body;
   try {
@@ -20,14 +22,14 @@ async function loginUser(req, res) {
         process.env.TOKEN_KEY,
         {
           expiresIn: "2h",
-        }
+        } 
       );
 
       // save user token
       user.token = token;
 
       // user
-      res.status(200).json(user);
+      return res.status(200).json(user);
     }
     console.log(email, password);
     res.status(400).send("Invalid Credentials")
