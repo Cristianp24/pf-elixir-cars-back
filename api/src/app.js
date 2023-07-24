@@ -8,7 +8,6 @@ const server = express();
 
 server.use(express.json());
 server.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Credentials', true);
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
