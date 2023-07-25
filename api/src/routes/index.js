@@ -6,6 +6,9 @@ const updateCar = require("../controllers/updateCar");
 const deleteCar = require("../controllers/deleteCar");
 const getAllBrands = require("../controllers/geAllBrands");
 const getAllCarModels = require("../controllers/getAllCarModels");
+const registerUser = require("../controllers/registerUser");
+const loginUser = require("../controllers/loginUser");
+const auth = require("../../middleware/auth");
 
 const router = Router();
 
@@ -21,5 +24,11 @@ router.get("/brands", getAllBrands); // Obtener todas las marcas
 
 // Rutas para los modelos
 router.get("/carModels", getAllCarModels); // Obtener todas los modelos de automóviles
+
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/welcome", auth, (req, res) => {
+  res.status(200).send("Welcome 🙌 ");
+});
 
 module.exports = router;
