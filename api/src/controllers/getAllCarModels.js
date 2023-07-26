@@ -1,9 +1,10 @@
+const { Op } = require("sequelize");
 const { carModels, brands } = require("../db");
 async function getAllCarModels(req, res) {
   // Obtener los modelos de autos de la base de datos después de haberlos creado
   try {
     const { brand } = req.query;
-    const filterOptions = {};
+    let filterOptions = {};
     if (brand) {
       // Si brand está presente en la solicitud
       // Realizamos la consulta para obtener los modelos de autos filtrados por la marca
