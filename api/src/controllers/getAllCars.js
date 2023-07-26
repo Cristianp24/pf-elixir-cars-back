@@ -82,29 +82,8 @@ async function getAllCars(req, res) {
       filterOptions = { ...filterOptions, kilometraje: { [Op.lte]: maxKm } };
     }
 
-    // // Obtener todos los autos de la base de datos con el límite y el offset adecuados, y contar el total de elementos.
-    // const { rows: dbCars, count: totalItems } = await cars.findAndCountAll({
-    //   limit: limit,
-    //   offset: offset,
-    //   where: filterOptions,
-    //   include: [
-    //     { model: brands, attributes: ["name"] },
-    //     { model: carModels, attributes: ["name"] },
-    //   ],
-    // });
-
-    // // Calcular el total de páginas disponibles
-    // const totalPages = Math.ceil(totalItems / limit);
-
-    // // Responder con la lista paginada de autos y la información de paginación
-    // res.status(200).json({
-    //   data: dbCars,
-    //   currentPage: page,
-    //   totalPages: totalPages,
-    //   totalItems: totalItems,
-    // });
-
-    const dbCars = await cars.findAll({
+    // Obtener todos los autos de la base de datos con el límite y el offset adecuados, y contar el total de elementos.
+    const { rows: dbCars, count: totalItems } = await cars.findAndCountAll({
       limit: limit,
       offset: offset,
       where: filterOptions,
@@ -113,7 +92,17 @@ async function getAllCars(req, res) {
         { model: carModels, attributes: ["name"] },
       ],
     });
-    res.status(200).json(dbCars);
+
+    // Calcular el total de páginas disponibles
+    const totalPages = Math.ceil(totalItems / limit);
+
+    // Responder con la lista paginada de autos y la información de paginación
+    res.status(200).json({
+      data: dbCars,
+      currentPage: page,
+      totalPages: totalPages,
+      totalItems: totalItems,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error al obtener los autos" });
