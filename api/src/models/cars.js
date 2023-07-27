@@ -1,62 +1,59 @@
-const {DataTypes} =  require ('sequelize');
+const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize, Sequelize) => {
-    const cars = sequelize.define('cars', {
-        id:{
-            type: DataTypes.STRING,
-            // defaultValue: DataTypes.STRING,
-            primaryKey: true,
-        },
-        marca: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        modelo: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        precio: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        estado: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        year:{
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        imageUrl: {
+module.exports = (sequelize) => {
+  sequelize.define(
+    "cars",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      brandId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      carModelId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      presentacion: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+      },
+      precio: {
+        type: DataTypes.FLOAT,
 
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        combustible: {
-            type: DataTypes.STRING,
-
-            type: DataTypes.ARRAY(DataTypes.STRING),
-
-            allowNull: true,
-        },
-
-        imageUrl: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: true,
-        },
-
-        kilometraje: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        fichaTecnica:{
-            type: DataTypes.JSON,
-            allowNull: true,
-
-        }      
-    },{
-        timestamps: true//no necesito la columna extra donde mustra la fecha de creacion.
-     })
-
-     return cars;
-        }
+        allowNull: true,
+      },
+      estado: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      year: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      imageUrl: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        allowNull: true,
+      },
+      kilometraje: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      combustible: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      fichaTecnica: {
+        type: DataTypes.JSON,
+        allowNull: true,
+      },
+    },
+    {
+      timestamps: false, //no necesito la columna extra donde mustra la fecha de creacion.
+    }
+  );
+};

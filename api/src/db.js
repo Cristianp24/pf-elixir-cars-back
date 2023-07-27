@@ -1,38 +1,48 @@
 require("dotenv").config();
-const { DB_USER, DB_PASSWORD, DB_HOST,DB_NAME} = process.env;
 const { Sequelize } = require("sequelize");
-
-const BrandModel = require("./models/brand");
-const CarModelModel = require("./models/carModel");
-const CarsModel = require("./models/cars");
- 
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
+const models = require("./models");
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   { logging: false, native: false }
 );
 
-BrandModel(sequelize);
-CarModelModel(sequelize);
-CarsModel(sequelize);
+// Iterar sobre los modelos y pasarles la instancia de Sequelize
+Object.values(models).forEach((model) => {
+  model(sequelize);
+});
 
-const { brand, carModel, cars } = sequelize.models;
+const { brands, carModels, cars, users } = sequelize.models;
 
-carModel.hasMany(cars);
+carModels.hasMany(cars);
+cars.belongsTo(carModels), { foreignKey: "carModelId" };
 
-cars.belongsTo(carModel, { foreignKey: "modelId" });
+brands.hasMany(cars);
+cars.belongsTo(brands, { foreignKey: "brandId" });
 
-cars.belongsTo(carModel, { foreignKey: "carModelId" });
+brands.hasMany(carModels);
+carModels.belongsTo(brands, { foreignKey: "brandId" });
 
+// Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
+cars.beforeCreate(async (modelo) => {
+  const maxId = await cars.max("id", { where: { estado: modelo.estado } });
 
-brand.hasMany(cars);
-cars.belongsTo(brand, { foreignKey: "brandId" });
+  const estado = modelo.estado.toLowerCase();
+  // Si el estado es "Nuevo" y no hay registros con estado "Nuevo", iniciamos en 1
+  // Si el estado es "Usado" y no hay registros con estado "Usado", iniciamos en 1001
+  if ((estado === "nuevo" && !maxId) || (estado === "usado" && !maxId)) {
+    modelo.id = estado === "nuevo" ? 1 : 1001;
+  } else {
+    // Si hay registros con el mismo estado, incrementamos el id en 1
+    modelo.id = maxId + 1;
+  }
+});
 
 module.exports = {
-  carModel,
+  carModels,
   cars,
-  brand,
+  brands,
+  users,
   conn: sequelize,
 };
-
-

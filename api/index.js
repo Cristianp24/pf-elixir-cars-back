@@ -1,13 +1,12 @@
-const server = require('./src/app');
-const { conn } = require('./src/db.js');
-require('dotenv').config()
-const PORT = process.env.DB_PORT || 3001;
+const server = require("./src/app.js");
+const { conn } = require("./src/db.js");
+const loadApiDataInDb = require("./src/utils/loadApiDataInDb.js");
 
-
-
-conn.sync({ force : true }).then(() => {
-  server.listen(PORT, () => {
-    console.log('Server is listening at',PORT); // eslint-disable-line no-console
+// Syncing all the models at once.
+conn.sync({ force: true }).then(() => {
+  server.listen(process.env.PORT, async () => {
+    await loadApiDataInDb();
+    console.log("%s listening at ", process.env.PORT); // eslint-disable-line no-console
   });
 });
 
