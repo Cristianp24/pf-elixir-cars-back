@@ -15,6 +15,7 @@ const getCarsByKm = require("../controllers/getCarsByKm");
 const registerUser = require("../controllers/registerUser");
 const loginUser = require("../controllers/loginUser");
 const auth = require("../../middleware/auth");
+const bienvenido = require("../controllers/Bienvenidos");
 
 const router = Router();
 
@@ -42,5 +43,7 @@ router.post("/login", loginUser);
 router.get("/welcome", auth, (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
+
+router.get("/bienvenido", bienvenido);
 
 module.exports = router;

@@ -1,3 +1,5 @@
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const express = require("express");
 
 const router = require("./routes/index");
@@ -7,6 +9,8 @@ require("./db.js");
 const server = express();
 
 server.use(express.json());
+server.use(cookieParser());
+server.use(cors());
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
