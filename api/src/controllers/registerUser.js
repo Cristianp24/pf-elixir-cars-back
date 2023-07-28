@@ -4,23 +4,28 @@ const bcrypt = require("bcryptjs");
 async function registerUser(req, res) {
   try {
     const { name, email, password } = req.body;
+    console.log(name, email, password);
     if (!(email && password && name)) {
-      res.status(400).send("All input is required");
+      res.status(400).send("Por favor llena todos los campos");
     }
     //formato de mail vailido
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).send("Invalid email format");
+      return res.status(400).send("Email invalido");
     }
     //longitud del mail
     if (email.length > 30) {
-      return res.status(400).send("Email cannot be more than 30 characters");
+      return res
+        .status(400)
+        .send("El email no puede tener mas de 30 caracteres");
     }
 
     const oldUser = await users.findOne({ where: { email } });
 
     if (oldUser) {
-      return res.status(409).send("User Already Exist. Please Login");
+      return res
+        .status(409)
+        .send("El usuario ya existe, por favor incia sesion");
     }
 
     let encryptedPassword = await bcrypt.hash(password, 10);
@@ -32,12 +37,16 @@ async function registerUser(req, res) {
       password: encryptedPassword,
     });
 
-    const token = jwt.sign({ user_id: user.id, email }, process.env.TOKEN_KEY, {
-      expiresIn: "2h",
-    });
+    const token = jwt.sign(
+      { user_id: user.id, email, name },
+      process.env.TOKEN_KEY,
+      {
+        expiresIn: "2h",
+      }
+    );
     // save users token
     user.token = token;
-    await user.save()
+    await user.save();
 
     res.status(200).json(user);
   } catch (error) {
