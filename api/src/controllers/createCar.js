@@ -16,17 +16,37 @@ async function createCar(req, res) {
     } = req.body;
 
     //validacion
-    if (!marca ||!modelo ||!presentacion ||!precio ||!estado ||!year ||!imageUrl ||!kilometraje ||!combustible ||!fichaTecnica) {
-      return res.status(400).json({error: "Todos los campos son obligatorios, debe llenarlos correctamente"})
+    if (
+      !marca ||
+      !modelo ||
+      !presentacion ||
+      !precio ||
+      !estado ||
+      !year ||
+      !imageUrl ||
+      !kilometraje ||
+      !combustible ||
+      !fichaTecnica
+    ) {
+      return res
+        .status(400)
+        .json({
+          error:
+            "Todos los campos son obligatorios, debe llenarlos correctamente",
+        });
     }
 
     if (typeof precio !== "number" || precio <= 0) {
-      return res.status(400).json({ error: "El precio debe ser un número positivo" });
+      return res
+        .status(400)
+        .json({ error: "El precio debe ser un número positivo" });
     }
 
     const estadoRegex = /^(nuevo|usado)$/i;
     if (!estadoRegex.test(estado)) {
-      return res.status(400).json({ error: "El estado debe ser 'nuevo' o 'usado'" });
+      return res
+        .status(400)
+        .json({ error: "El estado debe ser 'nuevo' o 'usado'" });
     }
 
     const currentYear = new Date().getFullYear();
@@ -36,10 +56,13 @@ async function createCar(req, res) {
 
     const imageUrlRegex = /^(http|https):\/\/[^\s/$.?#].[^\s]*$/i;
     if (!imageUrlRegex.test(imageUrl)) {
-      return res.status(400).json({ error: "La URL de la imagen no es válida" });
+      return res
+        .status(400)
+        .json({ error: "La URL de la imagen no es válida" });
     }
 
-    if ( //validacion para que ficha tecnica contenga estos datos especificos
+    if (
+      //validacion para que ficha tecnica contenga estos datos especificos
       typeof fichaTecnica !== "object" ||
       !fichaTecnica.Motor ||
       !fichaTecnica.Pasajeros ||
