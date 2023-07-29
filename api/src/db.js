@@ -5,6 +5,7 @@ const models = require("./models");
 
 const sequelize = new Sequelize(
   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/elixircars`,
   { logging: false, native: false }
 );
 
@@ -14,6 +15,7 @@ Object.values(models).forEach((model) => {
 });
 
 const { brands, carModels, cars, users } = sequelize.models;
+const { brands, carModels, cars, users, cart, cartItem } = sequelize.models;
 
 carModels.hasMany(cars);
 cars.belongsTo(carModels), { foreignKey: "carModelId" };
@@ -23,6 +25,15 @@ cars.belongsTo(brands, { foreignKey: "brandId" });
 
 brands.hasMany(carModels);
 carModels.belongsTo(brands, { foreignKey: "brandId" });
+
+cart.belongsToMany(cars, { through: cartItem });
+cars.belongsToMany(cart, { through: cartItem });
+
+users.hasMany(cart, { as: "carts", foreignKey: "userId" });
+cart.belongsTo(users, { as: "user", foreignKey: "userId" });
+
+
+
 
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 cars.beforeCreate(async (modelo) => {

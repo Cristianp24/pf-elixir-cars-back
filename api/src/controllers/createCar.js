@@ -1,4 +1,6 @@
 const { cars, brands, carModels } = require("../db.js");
+// const verifyToken = require("../../middleware/auth.js"); 
+
 
 async function createCar(req, res) {
   try {
@@ -91,4 +93,5 @@ async function createCar(req, res) {
     res.status(500).json({ error: "Error al crear el automóvil" });
   }
 }
+// module.exports = verifyToken, createCar;
 module.exports = createCar;

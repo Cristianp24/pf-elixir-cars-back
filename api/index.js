@@ -4,8 +4,8 @@ const loadApiDataInDb = require("./src/utils/loadApiDataInDb.js");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, async () => {
+  server.listen(3001, async () => {
     await loadApiDataInDb();
-    console.log("%s listening at ", process.env.PORT); // eslint-disable-line no-console
+    console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
 });
