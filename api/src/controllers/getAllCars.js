@@ -1,5 +1,7 @@
+
 const { Op } = require("sequelize");
 const { cars, brands, carModels } = require("../db"); // Asegurarse de importar los modelos cars, brands y carModels desde db.js
+
 
 async function getAllCars(req, res) {
   try {
@@ -110,3 +112,4 @@ async function getAllCars(req, res) {
 }
 
 module.exports = getAllCars;
+
