@@ -4,7 +4,6 @@ const { DB_USER, DB_PASSWORD, DB_HOST,DB_NAME,DB_PORT } = process.env;
 const models = require("./models");
 
 const sequelize = new Sequelize(
-  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/elixircars`,
   { logging: false, native: false }
 );
@@ -14,7 +13,6 @@ Object.values(models).forEach((model) => {
   model(sequelize);
 });
 
-const { brands, carModels, cars, users } = sequelize.models;
 const { brands, carModels, cars, users, cart, cartItem } = sequelize.models;
 
 carModels.hasMany(cars);
