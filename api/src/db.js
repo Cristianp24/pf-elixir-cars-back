@@ -6,7 +6,7 @@ const models = require("./models");
 
 const sequelize = new Sequelize(
   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
-  { logging: false, native: false }
+  { logging: false, native: false  }
 );
 // Iterar sobre los modelos y pasarles la instancia de Sequelize
 Object.values(models).forEach((model) => {
