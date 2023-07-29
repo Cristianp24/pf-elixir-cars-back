@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "users",
+    "cartItem",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -10,34 +10,32 @@ module.exports = (sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      name: {
+      carId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      },
+      unitPrice: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
+      brand: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      password: {
+      model: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      token: {
-        type: DataTypes.STRING,
-      
-      },
-      role:{
-        type :DataTypes.STRING,
-        values:[ 'admin','user'],
-        defaultValue:'user'
-      },
-      status: {
-        type: DataTypes.ENUM,
-        values: ["active", "suspended"],
+      year: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: "active", 
-      }
+      },
+      // Otras propiedades relevantes del artículo del carrito, como descuentos, etc.
     },
     {
       timestamps: false,

@@ -23,7 +23,8 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       precio: {
-        type: DataTypes.STRING,
+        type: DataTypes.FLOAT,
+
         allowNull: true,
       },
       estado: {
@@ -31,7 +32,7 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       year: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       imageUrl: {
@@ -39,7 +40,7 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       kilometraje: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       combustible: {

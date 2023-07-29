@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { DB_USER, DB_PASSWORD, DB_HOST,DB_NAME,DB_PORT } = process.env;
 
+
 const models = require("./models");
 
 const sequelize = new Sequelize(
@@ -13,13 +14,25 @@ Object.values(models).forEach((model) => {
   model(sequelize);
 });
 
-const { brands, carModels, cars } = sequelize.models;
+const { brands, carModels, cars, users, cart, cartItem } = sequelize.models;
 
 carModels.hasMany(cars);
 cars.belongsTo(carModels), { foreignKey: "carModelId" };
 
 brands.hasMany(cars);
 cars.belongsTo(brands, { foreignKey: "brandId" });
+
+brands.hasMany(carModels);
+carModels.belongsTo(brands, { foreignKey: "brandId" });
+
+cart.belongsToMany(cars, { through: cartItem });
+cars.belongsToMany(cart, { through: cartItem });
+
+users.hasMany(cart, { as: "carts", foreignKey: "userId" });
+cart.belongsTo(users, { as: "user", foreignKey: "userId" });
+
+
+
 
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 cars.beforeCreate(async (modelo) => {
@@ -40,5 +53,6 @@ module.exports = {
   carModels,
   cars,
   brands,
+  users,
   conn: sequelize,
 };
