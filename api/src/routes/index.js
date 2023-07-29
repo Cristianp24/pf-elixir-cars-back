@@ -9,6 +9,8 @@ const getAllCarModels = require("../controllers/getAllCarModels");
 const registerUser = require("../controllers/registerUser");
 const loginUser = require("../controllers/loginUser");
 const auth = require("../../middleware/auth");
+const getCart = require("../controllers/getCart");
+const updateCartDetail = require("../controllers/updateCartDetail");
 
 const router = Router();
 
@@ -25,10 +27,16 @@ router.get("/brands", getAllBrands); // Obtener todas las marcas
 // Rutas para los modelos
 router.get("/carModels", getAllCarModels); // Obtener todas los modelos de automóviles
 
+// Rutas para los usuarios
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/welcome", auth, (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
+
+router.get("/cart", getCart);
+
+router.put("/cartDetail/:id", updateCartDetail);
+router.post("/cartDetail",)
 
 module.exports = router;

@@ -25,8 +25,7 @@ module.exports = (sequelize) => {
       },
       token: {
         type: DataTypes.STRING,
-       
-      }
+      },
     },
     {
       timestamps: false,
