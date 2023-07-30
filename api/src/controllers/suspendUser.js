@@ -1,11 +1,11 @@
-const { users } = require("../db");
+const { User } = require("../db");
 
 async function suspendUser(req, res) {
   try {
     const userId = req.params.id;
 
     // Verificar si el usuario existe
-    const user = await users.findByPk(userId);
+    const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).send("User not found");
     }

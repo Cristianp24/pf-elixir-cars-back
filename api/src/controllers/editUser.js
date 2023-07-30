@@ -1,4 +1,4 @@
-const { users } = require("../db");
+const { User } = require("../db");
 const bcrypt = require("bcryptjs");
 
 async function editUser(req, res) {
@@ -7,7 +7,7 @@ async function editUser(req, res) {
     const { name, email, password, role } = req.body;
 
     // Verificar si el usuario existe
-    const user = await users.findByPk(userId);
+    const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).send("User not found");
     }

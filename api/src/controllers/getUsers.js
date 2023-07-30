@@ -1,18 +1,17 @@
-const { users } = require("../db");
+const { User } = require("../db");
 
 async function getUsers(req, res) {
-    try {
-        const allUsers = await users.findAll({
-            attributes: ["id", "name", "email", "role"],
-        });
+  try {
+    const allUsers = await User.findAll({
+      attributes: ["id", "name", "email", "role"],
+    });
 
-      const count = await users.count();
+    const count = await User.count();
 
-      res.status(200).json({ count, users: allUsers });
-    } catch (error) {
-      res.status(500).json({ message: "Error fetching user count" });
-    }
+    res.status(200).json({ count, users: allUsers });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching user count" });
   }
-  
-  module.exports = getUsers;
-  
+}
+
+module.exports = getUsers;

@@ -1,10 +1,9 @@
-const {  users  } = require("../db");
+const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 async function registerUser(req, res) {
   try {
-
     const { name, email, password, role } = req.body;
 
     if (!(email && password && name)) {
@@ -22,34 +21,27 @@ async function registerUser(req, res) {
       return res.status(400).send("Email cannot be more than 30 characters");
     }
 
-    const oldUser = await users.findOne({ where: { email } });
+    const oldUser = await User.findOne({ where: { email } });
 
     if (oldUser) {
       return res.status(409).send("User Already Exists. Please Login");
-
     }
 
     let encryptedPassword = await bcrypt.hash(password, 10);
 
     // Crear usuario en nuestra base de datos
-    const user = await users.create({
+    const user = await User.create({
       name,
       email: email.toLowerCase(), // Sanitize: convert email to lowercase
       password: encryptedPassword,
-      role: role  // Asignar el rol de acuerdo a role
+      role: role, // Asignar el rol de acuerdo a role
     });
 
-
-    const token = jwt.sign(
-      { user_id: user.id, email },
-      process.env.TOKEN_KEY,
-      {
-        expiresIn: "2h",
-      }
-    );
+    const token = jwt.sign({ user_id: user.id, email }, process.env.TOKEN_KEY, {
+      expiresIn: "2h",
+    });
     // Guardar el token del usuario
     user.token = token;
-
 
     res.status(200).json(user);
   } catch (error) {

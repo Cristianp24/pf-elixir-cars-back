@@ -1,8 +1,6 @@
-const { users } = require("../db");
+const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-
-
 
 async function loginUser(req, res) {
   const { email, password } = req.body;
@@ -12,7 +10,7 @@ async function loginUser(req, res) {
       res.status(400).send("All input is required");
     }
 
-    const user = await users.findOne({ where: { email } });
+    const user = await User.findOne({ where: { email } });
     console.log(email, password);
 
     if (!user) {
@@ -31,7 +29,7 @@ async function loginUser(req, res) {
         process.env.TOKEN_KEY,
         {
           expiresIn: "2h",
-        } 
+        }
       );
 
       // Save user token
@@ -40,11 +38,9 @@ async function loginUser(req, res) {
 
       // user
       return res.status(200).json(user);
-
     } else {
       console.log(email, password);
       res.status(400).send("Invalid Credentials");
-
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -52,5 +48,3 @@ async function loginUser(req, res) {
 }
 
 module.exports = loginUser;
-
-

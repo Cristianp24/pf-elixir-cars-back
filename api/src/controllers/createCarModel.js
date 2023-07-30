@@ -1,10 +1,10 @@
-const { carModels } = require("../db.js");
+const { CarModel } = require("../db.js");
 async function createCarModel(req, res) {
   try {
     const { name } = req.body;
 
     // Crear el nuevo modelo de automóvil en la base de datos
-    const newCarModel = await carModels.create({ name });
+    const newCarModel = await CarModel.create({ name });
 
     res.status(201).json(newCarModel);
   } catch (error) {

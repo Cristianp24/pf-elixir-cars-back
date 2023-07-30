@@ -1,9 +1,8 @@
 const fs = require("fs");
-const { cars, brands, carModels } = require("../db");
+const { Car, Brand, CarModel } = require("../db");
 
-const path = require('path');
-const filePath = path.join(__dirname,"../../",'carsapi.json');
-
+const path = require("path");
+const filePath = path.join(__dirname, "../../", "carsapi.json");
 
 // Función para cargar la información del archivo JSON en la base de datos
 async function loadApiDataInDb() {
@@ -29,12 +28,12 @@ async function loadApiDataInDb() {
       } = carData;
 
       // Cargar Brand (marca) si no existe
-      const [marcaBd, marcaCreada] = await brands.findOrCreate({
+      const [marcaBd, marcaCreada] = await Brand.findOrCreate({
         where: { name: marca },
       });
 
       // Cargar CarModel (modelo) si no existe
-      const [modeloBd, modeloCreado] = await carModels.findOrCreate({
+      const [modeloBd, modeloCreado] = await CarModel.findOrCreate({
         where: { name: modelo },
         defaults: {
           brandId: marcaBd.id,
@@ -42,7 +41,7 @@ async function loadApiDataInDb() {
       });
 
       // Cargar Car (auto) si no existe
-      const [newCar, carCreated] = await cars.findOrCreate({
+      const [newCar, carCreated] = await Car.findOrCreate({
         where: { presentacion },
         defaults: {
           carModelId: modeloBd.id,
