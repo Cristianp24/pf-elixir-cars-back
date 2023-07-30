@@ -20,6 +20,7 @@ const suspendUser = require("../controllers/suspendUser");
 const getCart = require("../controllers/getCart");
 const updateCartDetail = require("../controllers/updateCartDetail");
 const createCartDetail = require("../controllers/createCartDetail");
+const getAllCartDetails = require("../controllers/getAllCartDetails");
 
 const router = Router();
 
@@ -55,6 +56,8 @@ router.get("/welcome", (req, res) => {
 // Rutas para el carrito
 router.get("/cart", getCart);
 
+// Rutas para los detalles del carrito
+router.get("/cartDetail", getAllCartDetails);
 router.put("/cartDetail/:id", updateCartDetail);
 router.post("/cartDetail", createCartDetail);
 
