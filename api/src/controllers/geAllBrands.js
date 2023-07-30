@@ -1,8 +1,8 @@
-const { brands } = require("../db");
+const { Brand } = require("../db");
 async function getAllBrands(req, res) {
   // Obtener los autos de la base de datos después de haberlos creado
   try {
-    const dbBrands = await brands.findAll();
+    const dbBrands = await Brand.findAll();
     // Responder con la lista completa de autos
     res.status(200).json(dbBrands);
   } catch (error) {

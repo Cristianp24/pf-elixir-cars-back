@@ -1,4 +1,4 @@
-const { cartDetails } = require("../db");
+const { CartDetail } = require("../db");
 
 async function updateCartDetail(req, res) {
   const { id } = req.params;
@@ -6,7 +6,7 @@ async function updateCartDetail(req, res) {
 
   try {
     // Buscar el CartDetail por su ID
-    const cartDetail = await cartDetails.findByPk(id);
+    const cartDetail = await CartDetail.findByPk(id);
 
     // Verificar si el CartDetail existe
     if (!cartDetail) {

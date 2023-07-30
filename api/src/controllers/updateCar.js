@@ -1,4 +1,4 @@
-const { cars } = require("../db");
+const { Car } = require("../db");
 
 // Controlador para actualizar un automóvil por su ID
 async function updateCar(req, res) {
@@ -15,7 +15,7 @@ async function updateCar(req, res) {
     } = req.body;
 
     // Buscar el automóvil por su ID en la base de datos
-    const car = await cars.findByPk(carId);
+    const car = await Car.findByPk(carId);
 
     if (!car) {
       return res.status(404).json({ error: "Automóvil no encontrado" });

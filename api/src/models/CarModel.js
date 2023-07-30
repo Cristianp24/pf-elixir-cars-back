@@ -1,9 +1,8 @@
-// carModel.js
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "carModels",
+    "carModel",
     {
       name: {
         type: DataTypes.STRING,

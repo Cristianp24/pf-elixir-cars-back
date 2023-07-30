@@ -1,43 +1,47 @@
-const { users } = require("../db");
+const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+
 async function registerUser(req, res) {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
+
     if (!(email && password && name)) {
-      res.status(400).send("All input is required");
+      return res.status(400).send("All input is required");
     }
-    //formato de mail vailido
+
+    // Formato de email válido
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.status(400).send("Invalid email format");
     }
-    //longitud del mail
+
+    // Longitud del email
     if (email.length > 30) {
       return res.status(400).send("Email cannot be more than 30 characters");
     }
 
-    const oldUser = await users.findOne({ where: { email } });
+    const oldUser = await User.findOne({ where: { email } });
 
     if (oldUser) {
-      return res.status(409).send("User Already Exist. Please Login");
+      return res.status(409).send("User Already Exists. Please Login");
     }
 
     let encryptedPassword = await bcrypt.hash(password, 10);
 
-    // Create users in our database
-    const user = await users.create({
+    // Crear usuario en nuestra base de datos
+    const user = await User.create({
       name,
-      email: email.toLowerCase(), // sanitize: convert email to lowercase
+      email: email.toLowerCase(), // Sanitize: convert email to lowercase
       password: encryptedPassword,
+      role: role, // Asignar el rol de acuerdo a role
     });
 
     const token = jwt.sign({ user_id: user.id, email }, process.env.TOKEN_KEY, {
       expiresIn: "2h",
     });
-    // save users token
+    // Guardar el token del usuario
     user.token = token;
-    await user.save()
 
     res.status(200).json(user);
   } catch (error) {

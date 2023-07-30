@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "users",
+    "user",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -25,6 +25,17 @@ module.exports = (sequelize) => {
       },
       token: {
         type: DataTypes.STRING,
+      },
+      role: {
+        type: DataTypes.STRING,
+        values: ["admin", "user"],
+        defaultValue: "user",
+      },
+      status: {
+        type: DataTypes.ENUM,
+        values: ["active", "suspended"],
+        allowNull: false,
+        defaultValue: "active",
       },
     },
     {

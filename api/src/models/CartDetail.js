@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const CartDetail = sequelize.define(
-    "cartDetails",
+  sequelize.define(
+    "cartDetail",
     {
       // Definición de campos del modelo CartDetail
       id: {
