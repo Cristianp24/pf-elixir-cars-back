@@ -1,5 +1,5 @@
 const { Op } = require("sequelize");
-const { cars, brands, carModels } = require("../db"); // Asegurarse de importar los modelos cars, brands y carModels desde db.js
+const { Car, Brand, CarModel } = require("../db"); // Asegurarse de importar los modelos cars, brands y carModels desde db.js
 
 async function getAllCars(req, res) {
   try {
@@ -27,7 +27,7 @@ async function getAllCars(req, res) {
     if (brand) {
       // Si brand está presente en la solicitud
       // Realizamos la consulta para obtener los autos filtrados por el brand
-      const brandFound = await brands.findOne({
+      const brandFound = await Brand.findOne({
         where: { name: { [Op.iLike]: brand } },
       });
       filterOptions = { ...filterOptions, brandId: brandFound.id };
@@ -35,7 +35,7 @@ async function getAllCars(req, res) {
     if (carModel) {
       // Si carModel está presente en la solicitud
       // Realizamos la consulta para obtener los modelos filtrados por el carModel
-      const carModelFound = await carModels.findOne({
+      const carModelFound = await CarModel.findOne({
         where: { name: { [Op.iLike]: carModel } },
       });
       filterOptions = { ...filterOptions, carModelId: carModelFound.id };
@@ -43,7 +43,8 @@ async function getAllCars(req, res) {
     if (state) {
       // Si state está presente en la solicitud
       // Realizamos la consulta para obtener los autos filtrados por el estado
-      filterOptions = { ...filterOptions, estado: { [Op.iLike]: state } };
+      filterOptions = { ...filterOptions,
+        estado: { [Op.iLike]: state === "nuevo" || state === "usado" ? state : null} };
     }
     if (minPrice && maxPrice) {
       // Ambos minPrice y maxPrice están presentes en la solicitud
@@ -83,13 +84,13 @@ async function getAllCars(req, res) {
     }
 
     // Obtener todos los autos de la base de datos con el límite y el offset adecuados, y contar el total de elementos.
-    const { rows: dbCars, count: totalItems } = await cars.findAndCountAll({
+    const { rows: dbCars, count: totalItems } = await Car.findAndCountAll({
       limit: limit,
       offset: offset,
       where: filterOptions,
       include: [
-        { model: brands, attributes: ["name"] },
-        { model: carModels, attributes: ["name"] },
+        { model: Brand, attributes: ["name"] },
+        { model: CarModel, attributes: ["name"] },
       ],
     });
 

@@ -1,5 +1,5 @@
 const { Op } = require("sequelize");
-const { carModels, brands } = require("../db");
+const { CarModel, Brand } = require("../db");
 async function getAllCarModels(req, res) {
   // Obtener los modelos de autos de la base de datos después de haberlos creado
   try {
@@ -8,16 +8,16 @@ async function getAllCarModels(req, res) {
     if (brand) {
       // Si brand está presente en la solicitud
       // Realizamos la consulta para obtener los modelos de autos filtrados por la marca
-      const brandFound = await brands.findOne({
+      const brandFound = await Brand.findOne({
         where: { name: { [Op.iLike]: brand } },
       });
       filterOptions = { ...filterOptions, brandId: brandFound.id };
     }
 
-    const dbCarModels = await carModels.findAll({
+    const dbCarModels = await CarModel.findAll({
       where: filterOptions,
       include: {
-        model: brands,
+        model: Brand,
         attributes: ["name"],
       },
     });

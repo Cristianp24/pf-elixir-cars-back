@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 const { cars, brands, carModels } = require("../db.js");
+=======
+const { Car, Brand, CarModel } = require("../db.js");
+// const verifyToken = require("../../middleware/auth.js");
+>>>>>>> 42e17e30a7f7cbd156a18ef2caf63f41dbc94669
 
 async function createCar(req, res) {
   try {
@@ -79,12 +84,12 @@ async function createCar(req, res) {
     }
 
     // Crear Brand (marca) si no existe
-    const [marcaBd, marcaCreada] = await brands.findOrCreate({
+    const [marcaBd, marcaCreada] = await Brand.findOrCreate({
       where: { name: marca },
     });
 
     // Crear CarModel (modelo) si no existe
-    const [modeloBd, modeloCreado] = await carModels.findOrCreate({
+    const [modeloBd, modeloCreado] = await CarModel.findOrCreate({
       where: { name: modelo },
       defaults: {
         brandId: marcaBd.id,
@@ -92,7 +97,7 @@ async function createCar(req, res) {
     });
 
     // Crear el nuevo automóvil en la base de datos
-    const [newCar, carCreated] = await cars.findOrCreate({
+    const [newCar, carCreated] = await Car.findOrCreate({
       where: { presentacion },
       defaults: {
         carModelId: modeloBd.id,
