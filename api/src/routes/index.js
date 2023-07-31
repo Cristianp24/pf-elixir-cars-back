@@ -10,7 +10,7 @@ const registerUser = require("../controllers/registerUser");
 const loginUser = require("../controllers/loginUser");
 const logOutUser = require("../controllers/logoutUser");
 const auth = require("../../middleware/auth");
-const bienvenido = require("../controllers/Bienvenidos");
+// const bienvenido = require("../controllers/Bienvenidos");
 
 const router = Router();
 
@@ -20,13 +20,10 @@ router.get("/cars/:id", getCarById); // Obtener un auto por su ID
 router.post("/cars", createCar); // Crear un nuevo auto
 router.put("/cars/:id", updateCar); // Actualizar un auto existente
 router.delete("/cars/:id", deleteCar); // Eliminar un auto por su ID
-
 // Rutas para las marcas
 router.get("/brands", getAllBrands); // Obtener todas las marcas
-
 // Rutas para los modelos
 router.get("/carModels", getAllCarModels); // Obtener todas los modelos de automóviles
-
 router.post("/logout", logOutUser);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
@@ -35,6 +32,6 @@ router.get("/welcome", auth, (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
 
-router.get("/bienvenido", bienvenido);
+// router.get("/bienvenido", bienvenido);
 
 module.exports = router;
