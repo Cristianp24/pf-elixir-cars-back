@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-const { cars, brands, carModels } = require("../db.js");
-=======
 const { Car, Brand, CarModel } = require("../db.js");
 // const verifyToken = require("../../middleware/auth.js");
->>>>>>> 42e17e30a7f7cbd156a18ef2caf63f41dbc94669
 
 async function createCar(req, res) {
   try {
