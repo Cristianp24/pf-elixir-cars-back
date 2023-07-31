@@ -25,7 +25,7 @@ async function loginUser(req, res) {
       console.log(email, password);
       // Create token
       const token = jwt.sign(
-        { user_id: user.id, email },
+        { user_id: user.id, role: user.role, email },
         process.env.TOKEN_KEY,
         {
           expiresIn: "2h",

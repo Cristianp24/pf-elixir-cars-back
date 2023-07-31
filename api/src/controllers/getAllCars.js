@@ -43,7 +43,8 @@ async function getAllCars(req, res) {
     if (state) {
       // Si state está presente en la solicitud
       // Realizamos la consulta para obtener los autos filtrados por el estado
-      filterOptions = { ...filterOptions, estado: { [Op.iLike]: state } };
+      filterOptions = { ...filterOptions,
+        estado: { [Op.iLike]: state === "nuevo" || state === "usado" ? state : null} };
     }
     if (minPrice && maxPrice) {
       // Ambos minPrice y maxPrice están presentes en la solicitud
