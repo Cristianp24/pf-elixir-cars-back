@@ -6,7 +6,7 @@ async function registerUser(req, res) {
   try {
     const { name, email, password, role } = req.body;
 
-    if (!(email && password && name)) {
+    if (!(email && password && name && role)) {
       return res.status(400).send("All input is required");
     }
 
@@ -43,7 +43,7 @@ async function registerUser(req, res) {
     // Guardar el token del usuario
     user.token = token;
 
-    res.status(200).json(usuario);
+    res.status(200).json(user);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
