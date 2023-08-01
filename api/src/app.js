@@ -54,7 +54,7 @@ server.use(express.json());
 server.use(cookieParser());
 
 // Configuración de CORS para permitir solicitudes desde un dominio específico (por ejemplo, http://localhost:3000)
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["http://localhost:5173"];
 const corsOptions = {
   origin: (origin, callback) => {
     if (allowedOrigins.includes(origin) || !origin) {
