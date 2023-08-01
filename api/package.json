@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/clerk-js": "^4.54.2",
     "@clerk/clerk-sdk-node": "^4.12.1",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
