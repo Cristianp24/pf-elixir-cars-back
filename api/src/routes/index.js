@@ -21,6 +21,7 @@ const getCart = require("../controllers/getCart");
 const updateCartDetail = require("../controllers/updateCartDetail");
 const createCartDetail = require("../controllers/createCartDetail");
 const getAllCartDetails = require("../controllers/getAllCartDetails");
+const deleteCartDetail = require("../controllers/deleteCartDetail");
 
 const router = Router();
 
@@ -57,8 +58,9 @@ router.get("/welcome", (req, res) => {
 router.get("/cart", getCart);
 
 // Rutas para los detalles del carrito
-router.get("/cartDetail", getAllCartDetails);
-router.put("/cartDetail/:id", updateCartDetail);
+router.get("/cartDetails", getAllCartDetails);
 router.post("/cartDetail", createCartDetail);
+router.put("/cartDetail/:id", updateCartDetail);
+router.delete("/cartDetail/:id", deleteCartDetail);
 
 module.exports = router;
