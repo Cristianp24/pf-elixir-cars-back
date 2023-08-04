@@ -6,19 +6,19 @@ async function registerUser(req, res) {
   try {
     const { name, email, password, role } = req.body;
 
-    if (!(email && password && name && role)) {
+    if (!(email && password && name)) {
       return res.status(400).send("All input is required");
     }
 
     // Formato de email válido
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).send("Email inválido");
+      return res.status(400).send("Invalid email format");
     }
 
     // Longitud del email
     if (email.length > 30) {
-      return res.status(400).send("El email no puede tener más de 30 caracteres");
+      return res.status(400).send("Email cannot be more than 30 characters");
     }
 
     const oldUser = await User.findOne({ where: { email } });
@@ -31,7 +31,7 @@ async function registerUser(req, res) {
 
     // Crear usuario en nuestra base de datos
     const user = await User.create({
-      name,
+      name: name,
       email: email.toLowerCase(), // Sanitize: convert email to lowercase
       password: encryptedPassword,
       role: role, // Asignar el rol de acuerdo a role

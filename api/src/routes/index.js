@@ -8,10 +8,20 @@ const getAllBrands = require("../controllers/geAllBrands");
 const getAllCarModels = require("../controllers/getAllCarModels");
 const registerUser = require("../controllers/registerUser");
 const loginUser = require("../controllers/loginUser");
+const verifyToken = require("../../middleware/auth");
+const checkRole = require("../../middleware/checkRole");
+const getUsers = require("../controllers/getUsers");
+const createUser = require("../controllers/createUser");
+const deleteUser = require("../controllers/deleteUser");
+const editUser = require("../controllers/editUser");
+const suspendUser = require("../controllers/suspendUser");
 const logOutUser = require("../controllers/logoutUser");
-const auth = require("../../middleware/auth");
-const logWithGoogle = require("../controllers/logwithGoogle.js");
-const getUserByEmail = require("../controllers/getUserByEmail");
+
+// const auth = require("../../middleware/auth")
+const getCart = require("../controllers/getCart");
+const updateCartDetail = require("../controllers/updateCartDetail");
+const createCartDetail = require("../controllers/createCartDetail");
+const getAllCartDetails = require("../controllers/getAllCartDetails");
 
 const router = Router();
 
@@ -29,16 +39,19 @@ router.get("/brands", getAllBrands); // Obtener todas las marcas
 // Rutas para los modelos
 router.get("/carModels", getAllCarModels); // Obtener todas los modelos de automóviles
 
-router.get("/getUser", getUserByEmail);
+// Rutas para los usuarios
+router.get("/users", getUsers); //obtener usuarios
 router.post("/logout", logOutUser);
+router.post("/users", createUser);
+router.delete("/users/:id", deleteUser);
+router.put("/users/:id", editUser);
+router.put("/users/:id/suspend", suspendUser); // Suspender un usuario
+
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-
-// router.get("/welcome", auth, (req, res) => {
-//   res.status(200).send("Welcome 🙌 ");
-// });
-
-router.get("/auth/google", logWithGoogle);
+router.get("/welcome", (req, res) => {
+  res.status(200).send("Welcome 🙌 ");
+});
 
 // Rutas para el carrito
 router.get("/cart", getCart);

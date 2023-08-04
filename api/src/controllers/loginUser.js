@@ -5,24 +5,25 @@ const bcrypt = require("bcryptjs");
 async function loginUser(req, res) {
   const { email, password } = req.body;
   try {
+    
+    console.log(email, password);
     if (!(email && password)) {
-      return res.status(400).send("Todos los campos son necesarios");
+      res.status(400).send("All input is required");
     }
 
     const user = await User.findOne({ where: { email } });
-    console.log(email, password, "primero");
+    console.log(user);
 
     if (!user) {
-      console.log(email, password , "segundo");
       return res.status(404).send("User not found");
     }
 
     if (user.status === "suspended") {
-      console.log(email, password, "tercero");
       return res.status(403).send("Account suspended. Please contact support.");
     }
 
     if (await bcrypt.compare(password, user.password)) {
+      console.log(email, password);
       // Create token
       const token = jwt.sign(
         { user_id: user.id, role: user.role, email },
@@ -39,11 +40,12 @@ async function loginUser(req, res) {
       // user
       return res.status(200).json(user);
     } else {
+      console.log(email, password);
       res.status(400).send("Invalid Credentials");
     }
   } catch (error) {
-    return res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 }
 
-module.exports = loginUser;
+module.exports = loginUser; 
