@@ -22,6 +22,12 @@ const updateCartDetail = require("../controllers/updateCartDetail");
 const createCartDetail = require("../controllers/createCartDetail");
 const getAllCartDetails = require("../controllers/getAllCartDetails");
 const deleteCartDetail = require("../controllers/deleteCartDetail");
+const createReview = require("../controllers/createReview");
+const getAllReviews = require("../controllers/getAllReviews");
+const updateReview = require("../controllers/updateReview");
+const deleteReview = require("../controllers/deleteReview");
+const processOrder = require("../controllers/processOrder");
+const getAllOrders = require("../controllers/getAllOrders");
 
 const router = Router();
 
@@ -58,9 +64,19 @@ router.get("/welcome", (req, res) => {
 router.get("/cart", getCart);
 
 // Rutas para los detalles del carrito
+router.post("/cartDetails", createCartDetail);
 router.get("/cartDetails", getAllCartDetails);
-router.post("/cartDetail", createCartDetail);
 router.put("/cartDetail/:id", updateCartDetail);
 router.delete("/cartDetail/:id", deleteCartDetail);
+
+// Rutas para los reviews
+router.post("/reviews", createReview);
+router.get("/reviews", getAllReviews);
+router.put("/reviews/:id", updateReview);
+router.delete("/reviews/:id", deleteReview);
+
+// Rutas para las ordenes
+router.post("/process-order/:cartId", processOrder);
+router.get("/orders", getAllOrders);
 
 module.exports = router;

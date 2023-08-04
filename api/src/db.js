@@ -21,8 +21,17 @@ let capsEntries = entries.map((entry) => [
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Brand, CarModel, Car, User, Cart, CartDetail, Order, OrderDetail } =
-  sequelize.models;
+const {
+  Brand,
+  CarModel,
+  Car,
+  User,
+  Cart,
+  CartDetail,
+  Order,
+  OrderDetail,
+  Review,
+} = sequelize.models;
 
 CarModel.hasMany(Car);
 Car.belongsTo(CarModel), { foreignKey: "carModelId" };
@@ -39,17 +48,23 @@ CartDetail.belongsTo(Car, { foreignKey: "carId" });
 Cart.hasMany(CartDetail);
 CartDetail.belongsTo(Cart, { foreignKey: "cartId" });
 
-Car.hasMany(OrderDetail);
-OrderDetail.belongsTo(Car, { foreignKey: "carId" });
+Cart.hasMany(Order);
+Order.belongsTo(Cart, { foreignKey: "cartId" });
 
 Order.hasMany(OrderDetail);
 OrderDetail.belongsTo(Order, { foreignKey: "orderId" });
 
+Car.hasMany(OrderDetail);
+OrderDetail.belongsTo(Car, { foreignKey: "carId" });
+
 User.hasOne(Cart);
 Cart.belongsTo(User, { foreignKey: "userId" });
 
-User.hasMany(Order);
-Order.belongsTo(User, { foreignKey: "userId" });
+User.hasMany(Review);
+Review.belongsTo(User, { foreignKey: "userId" });
+
+Car.hasMany(Review);
+Review.belongsTo(Car, { foreignKey: "carId" });
 
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 Car.beforeCreate(async (car) => {
@@ -123,5 +138,6 @@ module.exports = {
   CartDetail,
   Order,
   OrderDetail,
+  Review,
   conn: sequelize,
 };

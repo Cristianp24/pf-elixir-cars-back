@@ -9,16 +9,17 @@ module.exports = (sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      rate: {
+      calificacion: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
         validate: {
           min: 1,
           max: 5,
         },
       },
-      comment: {
+      comentario: {
         type: DataTypes.TEXT,
+        allowNull: true,
       },
     },
     {
