@@ -14,10 +14,10 @@ async function registerUser(req, res) {
       return res.status(400).send("Email invalido");
     }
     //longitud del mail
-    if (email.length > 30) {
+    if (email.length > 50) {
       return res
         .status(400)
-        .send("El email no puede tener mas de 30 caracteres");
+        .send("El email no puede tener mas de 50 caracteres");
     }
 
     const oldUser = await users.findOne({ where: { email } });

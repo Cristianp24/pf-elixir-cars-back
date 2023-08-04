@@ -12,6 +12,8 @@ const logOutUser = require("../controllers/logoutUser");
 const auth = require("../../middleware/auth");
 const logWithGoogle = require("../controllers/logwithGoogle.js");
 const getUserByEmail = require("../controllers/getUserByEmail");
+const registerEmail = require("../controllers/regiterEmail");
+const sendEmail = require("../controllers/sendEmail");
 
 const router = Router();
 
@@ -32,11 +34,8 @@ router.get("/getUser", getUserByEmail);
 router.post("/logout", logOutUser);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-
-// router.get("/welcome", auth, (req, res) => {
-//   res.status(200).send("Welcome 🙌 ");
-// });
-
 router.get("/auth/google", logWithGoogle);
+router.post("/sendEmail", sendEmail);
+router.post("/registerEmail", registerEmail);
 
 module.exports = router;

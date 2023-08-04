@@ -13,7 +13,7 @@ Object.values(models).forEach((model) => {
   model(sequelize);
 });
 
-const { brands, carModels, cars, users } = sequelize.models;
+const { brands, carModels, cars, users, emails } = sequelize.models;
 
 carModels.hasMany(cars);
 cars.belongsTo(carModels), { foreignKey: "carModelId" };
@@ -44,5 +44,6 @@ module.exports = {
   cars,
   brands,
   users,
+  emails,
   conn: sequelize,
 };
