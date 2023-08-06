@@ -1,16 +1,17 @@
 const { User } = require("../db");
 
 async function getUsers(req, res) {
+  const { email } = req.query;
   try {
-    const allUsers = await User.findAll({
-      attributes: ["id", "name", "email", "role"],
-    });
+    const user = await User.findOne({ where: { email } });
 
-    const count = await User.count();
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
 
-    res.status(200).json({ count, users: allUsers });
+    res.status(200).json(user);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching user count" });
+    res.status(500).json({ message: "Error fetching user by email" });
   }
 }
 

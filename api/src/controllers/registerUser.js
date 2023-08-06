@@ -31,7 +31,7 @@ async function registerUser(req, res) {
 
     // Crear usuario en nuestra base de datos
     const user = await User.create({
-      name,
+      name: name,
       email: email.toLowerCase(), // Sanitize: convert email to lowercase
       password: encryptedPassword,
       role: role, // Asignar el rol de acuerdo a role

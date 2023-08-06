@@ -5,13 +5,14 @@ const bcrypt = require("bcryptjs");
 async function loginUser(req, res) {
   const { email, password } = req.body;
   try {
+    
     console.log(email, password);
     if (!(email && password)) {
       res.status(400).send("All input is required");
     }
 
     const user = await User.findOne({ where: { email } });
-    console.log(email, password);
+    console.log(user);
 
     if (!user) {
       return res.status(404).send("User not found");
@@ -47,4 +48,4 @@ async function loginUser(req, res) {
   }
 }
 
-module.exports = loginUser;
+module.exports = loginUser; 
