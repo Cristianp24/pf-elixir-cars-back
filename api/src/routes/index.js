@@ -56,11 +56,6 @@ router.put("/users/:id/suspend", suspendUser); // Suspender un usuario
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-<<<<<<< HEAD
-router.get("/auth/google", logWithGoogle);
-router.post("/sendEmail", sendEmail);
-router.post("/registerEmail", registerEmail);
-=======
 router.get("/welcome", (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
@@ -83,6 +78,5 @@ router.delete("/reviews/:id", deleteReview);
 // Rutas para las ordenes
 router.post("/process-order/:cartId", processOrder);
 router.get("/orders", getAllOrders);
->>>>>>> 9f97bf9c5a6d08e1115664bf92ffe1bd1a2c1294
 
 module.exports = router;

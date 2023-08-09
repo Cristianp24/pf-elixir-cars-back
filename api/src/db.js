@@ -131,13 +131,6 @@ CartDetail.afterDestroy(async (cartDetail) => {
 });
 
 module.exports = {
-<<<<<<< HEAD
-  carModels,
-  cars,
-  brands,
-  users,
-  emails,
-=======
   CarModel,
   Car,
   Brand,
@@ -147,6 +140,5 @@ module.exports = {
   Order,
   OrderDetail,
   Review,
->>>>>>> 9f97bf9c5a6d08e1115664bf92ffe1bd1a2c1294
   conn: sequelize,
 };
