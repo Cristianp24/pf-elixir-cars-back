@@ -29,6 +29,7 @@ const updateReview = require("../controllers/updateReview");
 const deleteReview = require("../controllers/deleteReview");
 const processOrder = require("../controllers/processOrder");
 const getAllOrders = require("../controllers/getAllOrders");
+const registerEmail = require("../controllers/regiterEmail");
 
 const router = Router();
 
@@ -78,5 +79,6 @@ router.delete("/reviews/:id", deleteReview);
 // Rutas para las ordenes
 router.post("/process-order/:cartId", processOrder);
 router.get("/orders", getAllOrders);
+router.post("/registerEmail", registerEmail);
 
 module.exports = router;
