@@ -15,7 +15,7 @@ async function deleteUser(req, res) {
 
     res.status(200).send("Uses deleted successfully");
   } catch (error) {
-    res.status(500).jhson({ message: "Error deleting user" });
+    res.status(500).json({ message: "Error deleting user" });
   }
 }
 

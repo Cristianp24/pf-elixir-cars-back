@@ -24,7 +24,6 @@ module.exports = (sequelize) => {
       },
       precio: {
         type: DataTypes.FLOAT,
-
         allowNull: true,
       },
       estado: {

@@ -22,8 +22,17 @@ let capsEntries = entries.map((entry) => [
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Brand, CarModel, Car, User, Cart, CartDetail, Order, OrderDetail } =
-  sequelize.models;
+const {
+  Brand,
+  CarModel,
+  Car,
+  User,
+  Cart,
+  CartDetail,
+  Order,
+  OrderDetail,
+  Review,
+} = sequelize.models;
 
 CarModel.hasMany(Car);
 Car.belongsTo(CarModel), { foreignKey: "carModelId" };
@@ -40,17 +49,23 @@ CartDetail.belongsTo(Car, { foreignKey: "carId" });
 Cart.hasMany(CartDetail);
 CartDetail.belongsTo(Cart, { foreignKey: "cartId" });
 
-Car.hasMany(OrderDetail);
-OrderDetail.belongsTo(Car, { foreignKey: "carId" });
+Cart.hasMany(Order);
+Order.belongsTo(Cart, { foreignKey: "cartId" });
 
 Order.hasMany(OrderDetail);
 OrderDetail.belongsTo(Order, { foreignKey: "orderId" });
 
+Car.hasMany(OrderDetail);
+OrderDetail.belongsTo(Car, { foreignKey: "carId" });
+
 User.hasOne(Cart);
 Cart.belongsTo(User, { foreignKey: "userId" });
 
-User.hasMany(Order);
-Order.belongsTo(User, { foreignKey: "userId" });
+User.hasMany(Review);
+Review.belongsTo(User, { foreignKey: "userId" });
+
+Car.hasMany(Review);
+Review.belongsTo(Car, { foreignKey: "carId" });
 
 // Definimos un gancho (hook) que se ejecutará antes de crear un nuevo registro
 Car.beforeCreate(async (car) => {
@@ -77,15 +92,13 @@ User.afterCreate(async (user) => {
   }
 });
 
-// Hook (afterCreate) para actualizar el carrito cuando se crea un CartDetail
-CartDetail.afterCreate(async (cartDetail) => {
+// Función para calcular el precio total y la cantidad de items del carrito
+async function updateCart(cartId) {
   try {
-    // Obtener todos los CartDetails relacionados con el carrito
     const cartDetailsDb = await CartDetail.findAll({
-      where: { cartId: cartDetail.cartId },
+      where: { cartId },
     });
 
-    // Calcular el nuevo precioTotal y cantidad de items del carrito
     let precioTotal = 0;
     let items = 0;
     for (const detail of cartDetailsDb) {
@@ -93,40 +106,28 @@ CartDetail.afterCreate(async (cartDetail) => {
       items += detail.cantidad;
     }
 
-    // Actualizar los campos precioTotal y items del carrito
-    const cart = await Cart.findByPk(cartDetail.cartId);
+    const cart = await Cart.findByPk(cartId);
     cart.precioTotal = precioTotal;
     cart.items = items;
     await cart.save();
   } catch (error) {
     console.error("Error al actualizar el carrito:", error);
   }
+}
+
+// Hook (afterCreate) para actualizar el carrito cuando se crea un CartDetail
+CartDetail.afterCreate(async (cartDetail) => {
+  await updateCart(cartDetail.cartId);
 });
 
 // Hook (afterUpdate) para actualizar el carrito cuando se actualiza un CartDetail
 CartDetail.afterUpdate(async (cartDetail) => {
-  try {
-    // Obtener todos los CartDetails relacionados con el carrito
-    const cartDetailsDb = await cartDetailsDb.findAll({
-      where: { cartId: cartDetail.cartId },
-    });
+  await updateCart(cartDetail.cartId);
+});
 
-    // Calcular el nuevo precioTotal y cantidad de items del carrito
-    let precioTotal = 0;
-    let items = 0;
-    for (const detail of cartDetailsDb) {
-      precioTotal += detail.precio * detail.cantidad;
-      items += detail.cantidad;
-    }
-
-    // Actualizar los campos precioTotal y items del carrito
-    const cart = await Cart.findByPk(cartDetail.cartId);
-    cart.precioTotal = precioTotal;
-    cart.items = items;
-    await cart.save();
-  } catch (error) {
-    console.error("Error al actualizar el carrito:", error);
-  }
+// Hook (afterDestroy) para actualizar el carrito cuando se elimina un CartDetail
+CartDetail.afterDestroy(async (cartDetail) => {
+  await updateCart(cartDetail.cartId);
 });
 
 module.exports = {
@@ -138,5 +139,6 @@ module.exports = {
   CartDetail,
   Order,
   OrderDetail,
+  Review,
   conn: sequelize,
 };
