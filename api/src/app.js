@@ -68,4 +68,5 @@ const corsOptions = {
 server.use(cors(corsOptions));
 
 server.use("/", router);
+
 module.exports = server;

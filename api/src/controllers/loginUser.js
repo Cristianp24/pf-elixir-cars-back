@@ -1,38 +1,51 @@
-const { users } = require("../db");
+const { User } = require("../db");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const { serialize } = require("cookie");
 
 async function loginUser(req, res) {
   const { email, password } = req.body;
   try {
+    
+    console.log(email, password);
     if (!(email && password)) {
-      return res.status(400).send("Todos los campos son necesarios");
+      res.status(400).send("All input is required");
     }
 
-    const user = await users.findOne({ where: { email } });
+    const user = await User.findOne({ where: { email } });
+    console.log(user);
 
-    if (user && (await bcrypt.compare(password, user.password))) {
-      //Pasando el token que ya tiene el usuario por cookie en los headers
-      // const secureCookie = process.env.NODE_ENV === "production";
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
 
-      const serialized = serialize("userToken", user.token, {
-        httpOnly: true,
-        secure: false,
-        sameSite: "lax",
-        path: "/",
-        expires: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30),
-      });
+    if (user.status === "suspended") {
+      return res.status(403).send("Account suspended. Please contact support.");
+    }
 
-      res.setHeader("Set-Cookie", serialized);
+    if (await bcrypt.compare(password, user.password)) {
+      console.log(email, password);
+      // Create token
+      const token = jwt.sign(
+        { user_id: user.id, role: user.role, email },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "2h",
+        }
+      );
+
+      // Save user token
+      user.token = token;
+      await user.save();
 
       // user
       return res.status(200).json(user);
+    } else {
+      console.log(email, password);
+      res.status(400).send("Invalid Credentials");
     }
-
-    return res.status(400).send("Invalid Credentials");
   } catch (error) {
-    return res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 }
 
-module.exports = loginUser;
+module.exports = loginUser; 

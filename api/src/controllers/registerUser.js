@@ -1,52 +1,103 @@
-const { users } = require("../db");
+// const { User } = require("../db");
+// const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcryptjs");
+
+// async function registerUser(req, res) {
+//   try {
+//     const { name, email, password, role } = req.body;
+
+//     if (!(email && password && name)) {
+//       return res.status(400).send("All input is required");
+//     }
+
+//     // Formato de email válido
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailRegex.test(email)) {
+//       return res.status(400).send("Invalid email format");
+//     }
+
+//     // Longitud del email
+//     if (email.length > 30) {
+//       return res.status(400).send("Email cannot be more than 30 characters");
+//     }
+
+//     const oldUser = await User.findOne({ where: { email } });
+
+//     if (oldUser) {
+//       return res.status(409).send("User Already Exists. Please Login");
+//     }
+
+//     let encryptedPassword = await bcrypt.hash(password, 10);
+
+//     // Crear usuario en nuestra base de datos
+//     const user = await User.create({
+//       name: name,
+//       email: email.toLowerCase(), // Sanitize: convert email to lowercase
+//       password: encryptedPassword,
+//       role: role, // Asignar el rol de acuerdo a role
+//     });
+
+//     const token = jwt.sign({ user_id: user.id, email }, process.env.TOKEN_KEY, {
+//       expiresIn: "2h",
+//     });
+//     // Guardar el token del usuario
+//     user.token = token;
+
+//     res.status(200).json(user);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// }
+
+// module.exports = registerUser;
+
+const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+
 async function registerUser(req, res) {
   try {
-    const { name, email, password } = req.body;
-    console.log(name, email, password);
+    const { name, email, password, role } = req.body;
+    console.log({ name, email, password, role });
+
     if (!(email && password && name)) {
-      res.status(400).send("Por favor llena todos los campos");
+      return res.status(400).send("All input is required");
     }
-    //formato de mail vailido
+
+    // Formato de email válido
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).send("Email invalido");
-    }
-    //longitud del mail
-    if (email.length > 50) {
-      return res
-        .status(400)
-        .send("El email no puede tener mas de 50 caracteres");
+      return res.status(400).send("Invalid email format");
     }
 
-    const oldUser = await users.findOne({ where: { email } });
-
-    if (oldUser) {
-      return res
-        .status(409)
-        .send("El usuario ya existe, por favor incia sesion");
+    // Longitud del email
+    if (email.length > 30) {
+      return res.status(400).send("Email cannot be more than 30 characters");
     }
 
     let encryptedPassword = await bcrypt.hash(password, 10);
 
-    // Create users in our database
-    const user = await users.create({
-      name,
-      email: email.toLowerCase(), // sanitize: convert email to lowercase
-      password: encryptedPassword,
+    // Buscar o crear el usuario en la base de datos
+    const [user, created] = await User.findOrCreate({
+      where: { email },
+      defaults: {
+        name,
+        email: email.toLowerCase(),
+        password: encryptedPassword,
+        role,
+      },
     });
 
-    const token = jwt.sign(
-      { user_id: user.id, email, name },
-      process.env.TOKEN_KEY,
-      {
-        expiresIn: "2h",
-      }
-    );
-    // save users token
-    user.token = token;
-    await user.save();
+    if (!created) {
+      return res.status(200).send(null);
+    }
+
+    const token = jwt.sign({ user_id: user.id, email }, process.env.TOKEN_KEY, {
+      expiresIn: "2h",
+    });
+
+    // Puedes actualizar el token directamente en el registro del usuario
+    await user.update({ token });
 
     res.status(200).json(user);
   } catch (error) {
