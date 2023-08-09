@@ -32,6 +32,7 @@ const {
   Order,
   OrderDetail,
   Review,
+  Emails,
 } = sequelize.models;
 
 CarModel.hasMany(Car);
@@ -140,5 +141,6 @@ module.exports = {
   Order,
   OrderDetail,
   Review,
+  Emails,
   conn: sequelize,
 };

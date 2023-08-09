@@ -77,8 +77,8 @@ router.put("/reviews/:id", updateReview);
 router.delete("/reviews/:id", deleteReview);
 
 // Rutas para las ordenes
+router.post("/registerEmail", registerEmail);
 router.post("/process-order/:cartId", processOrder);
 router.get("/orders", getAllOrders);
-router.post("/registerEmail", registerEmail);
 
 module.exports = router;

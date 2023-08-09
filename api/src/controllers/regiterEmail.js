@@ -1,4 +1,4 @@
-const { emails } = require("../db");
+const { Emails } = require("../db");
 const registerEmail = async (req, res) => {
   try {
     const { email } = req.body;
@@ -15,13 +15,13 @@ const registerEmail = async (req, res) => {
       throw new Error("El email no puede tener mas de 50 caracteres");
     }
 
-    const oldEmail = await emails.findOne({ where: { email } });
+    const oldEmail = await Emails.findOne({ where: { email } });
 
     if (oldEmail) {
       throw new Error("Ya estas recibiendo nuestras noticias");
     }
     // Create Email in our database
-    await emails.create({
+    await Emails.create({
       email: email.toLowerCase(), // sanitize: convert email to lowercase
     });
     res.status(200).json({ message: "Te has inscrito exitosamente!" });
