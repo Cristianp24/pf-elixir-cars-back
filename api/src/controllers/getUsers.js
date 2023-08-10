@@ -25,6 +25,11 @@ async function getUsers(req, res) {
   // console.log(email);
 
   try {
+    if (!email) {
+      const users = await User.findAll();
+      return res.status(200).json(users);
+    }
+
     const user = await User.findOne({ where: { email } });
     // console.log(user);
 
