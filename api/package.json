@@ -11,11 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/clerk-js": "^4.54.2",
+    "@clerk/clerk-sdk-node": "^4.12.1",
+    "@sendgrid/mail": "^7.7.0",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
+    "cookie": "^0.5.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "firebase": "^10.1.0",
     "jsonwebtoken": "^9.0.1",
     "morgan": "^1.10.0",
     "mysql2": "^3.5.2",
@@ -23,6 +29,10 @@
     "path": "^0.12.7",
     "pg": "^8.11.1",
     "pg-hstore": "^2.3.4",
+    "sendgrid": "^5.2.3",
     "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.3"
   }
 }

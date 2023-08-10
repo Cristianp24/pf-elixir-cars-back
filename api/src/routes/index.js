@@ -15,6 +15,7 @@ const createUser = require("../controllers/createUser");
 const deleteUser = require("../controllers/deleteUser");
 const editUser = require("../controllers/editUser");
 const suspendUser = require("../controllers/suspendUser");
+const logOutUser = require("../controllers/logoutUser");
 
 // const auth = require("../../middleware/auth")
 const getCart = require("../controllers/getCart");
@@ -28,6 +29,7 @@ const updateReview = require("../controllers/updateReview");
 const deleteReview = require("../controllers/deleteReview");
 const processOrder = require("../controllers/processOrder");
 const getAllOrders = require("../controllers/getAllOrders");
+const registerEmail = require("../controllers/regiterEmail");
 
 const router = Router();
 
@@ -40,15 +42,14 @@ router.post("/cars", verifyToken, checkRole("admin"), createCar);
 
 router.put("/cars/:id", updateCar); // Actualizar un auto existente
 router.delete("/cars/:id", deleteCar); // Eliminar un auto por su ID
-
 // Rutas para las marcas
 router.get("/brands", getAllBrands); // Obtener todas las marcas
-
 // Rutas para los modelos
 router.get("/carModels", getAllCarModels); // Obtener todas los modelos de automóviles
 
 // Rutas para los usuarios
 router.get("/users", getUsers); //obtener usuarios
+router.post("/logout", logOutUser);
 router.post("/users", createUser);
 router.delete("/users/:id", deleteUser);
 router.put("/users/:id", editUser);
@@ -76,6 +77,7 @@ router.put("/reviews/:id", updateReview);
 router.delete("/reviews/:id", deleteReview);
 
 // Rutas para las ordenes
+router.post("/registerEmail", registerEmail);
 router.post("/process-order/:cartId", processOrder);
 router.get("/orders", getAllOrders);
 
