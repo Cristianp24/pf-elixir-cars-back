@@ -36,7 +36,7 @@ const {
 } = sequelize.models;
 
 CarModel.hasMany(Car);
-Car.belongsTo(CarModel), { foreignKey: "carModelId" };
+Car.belongsTo(CarModel, { foreignKey: "carModelId" });
 
 Brand.hasMany(Car);
 Car.belongsTo(Brand, { foreignKey: "brandId" });
