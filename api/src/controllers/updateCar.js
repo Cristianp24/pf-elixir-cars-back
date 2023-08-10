@@ -4,15 +4,7 @@ const { Car } = require("../db");
 async function updateCar(req, res) {
   try {
     const carId = req.params.id;
-    const {
-      precio,
-      estado,
-      year,
-      imageUrl,
-      kilometraje,
-      combustible,
-      fichaTecnica,
-    } = req.body;
+    const { precio, imageUrl, stock } = req.body;
 
     // Buscar el automóvil por su ID en la base de datos
     const car = await Car.findByPk(carId);
@@ -23,15 +15,7 @@ async function updateCar(req, res) {
 
     // Actualizar información del automóvil
 
-    await car.update({
-      precio,
-      estado,
-      year,
-      imageUrl,
-      kilometraje,
-      combustible,
-      fichaTecnica,
-    });
+    await car.update({ precio, imageUrl, stock });
 
     res.json(car);
   } catch (error) {
