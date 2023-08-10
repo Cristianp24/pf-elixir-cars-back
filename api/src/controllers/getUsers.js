@@ -8,7 +8,7 @@ async function getUsers(req, res) {
 
     const count = await User.count();
 
-    res.status(200).json({ count, users: allUsers });
+    res.status(200).json({ count, data: allUsers });
   } catch (error) {
     res.status(500).json({ message: "Error fetching user count" });
   }

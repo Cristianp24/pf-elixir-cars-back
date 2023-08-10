@@ -28,6 +28,7 @@ const updateReview = require("../controllers/updateReview");
 const deleteReview = require("../controllers/deleteReview");
 const processOrder = require("../controllers/processOrder");
 const getAllOrders = require("../controllers/getAllOrders");
+const getUserByEmail = require("../controllers/getUser");
 
 const router = Router();
 
@@ -53,6 +54,7 @@ router.post("/users", createUser);
 router.delete("/users/:id", deleteUser);
 router.put("/users/:id", editUser);
 router.put("/users/:id/suspend", suspendUser); // Suspender un usuario
+router.get("/user", getUserByEmail);
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
