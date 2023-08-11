@@ -21,6 +21,7 @@ const { User } = require("../db");
 
 async function getUsers(req, res) {
   const { email } = req.query;
+<<<<<<< HEAD
 
   // console.log(email);
 
@@ -38,6 +39,15 @@ async function getUsers(req, res) {
       return res.status(200).json(null);
     }
 
+=======
+  try {
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+>>>>>>> e35d5047377992dee33d5aafaf9975bfe117dfa1
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ message: "Error fetching user by email" });
