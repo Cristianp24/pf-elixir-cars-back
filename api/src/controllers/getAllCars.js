@@ -20,6 +20,8 @@ async function getAllCars(req, res) {
       maxYear,
       minKm,
       maxKm,
+      sortByBrand,
+      sortByPrice,
     } = req.query;
 
     let filterOptions = {};
@@ -82,6 +84,15 @@ async function getAllCars(req, res) {
       filterOptions = { ...filterOptions, kilometraje: { [Op.lte]: maxKm } };
     }
 
+    let orderOptions = [];
+
+    if (sortByBrand) {
+      orderOptions.push([{ model: Brand }, "name", sortByBrand]);
+    }
+    if (sortByPrice) {
+      orderOptions.push(["precio", sortByPrice]);
+    }
+
     // Obtener todos los autos de la base de datos con el límite y el offset adecuados, y contar el total de elementos.
     const { rows: dbCars, count: totalItems } = await Car.findAndCountAll({
       limit: limit,
@@ -91,6 +102,7 @@ async function getAllCars(req, res) {
         { model: Brand, attributes: ["name"] },
         { model: CarModel, attributes: ["name"] },
       ],
+      order: orderOptions,
     });
 
     // Calcular el total de páginas disponibles

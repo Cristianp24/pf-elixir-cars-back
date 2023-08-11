@@ -1,6 +1,6 @@
 const { CartDetail } = require("../db");
 async function getAllCartDetails(req, res) {
-  const { cartId } = req.body;
+  const { cartId } = req.params;
   try {
     // Obtener los detalles del carrito de la base de datos después de haberlos creado
     const dbCartDetails = await CartDetail.findAll({

@@ -66,7 +66,7 @@ router.get("/cart", getCart);
 
 // Rutas para los detalles del carrito
 router.post("/cartDetails", createCartDetail);
-router.get("/cartDetails", getAllCartDetails);
+router.get("/cartDetails/:cartId", getAllCartDetails);
 router.put("/cartDetail/:id", updateCartDetail);
 router.delete("/cartDetail/:id", deleteCartDetail);
 
