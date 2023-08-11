@@ -51,6 +51,11 @@ module.exports = (sequelize) => {
         type: DataTypes.JSON,
         allowNull: true,
       },
+      stock: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: () => Math.floor(Math.random() * 5) + 1,
+      },
     },
     {
       timestamps: false, //no necesito la columna extra donde mustra la fecha de creacion.
