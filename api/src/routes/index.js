@@ -30,6 +30,7 @@ const deleteReview = require("../controllers/deleteReview");
 const processOrder = require("../controllers/processOrder");
 const getAllOrders = require("../controllers/getAllOrders");
 const registerEmail = require("../controllers/regiterEmail");
+const sendEmail = require("../controllers/sendEmail");
 
 const router = Router();
 
@@ -54,6 +55,8 @@ router.post("/users", createUser);
 router.delete("/users/:id", deleteUser);
 router.put("/users/:id", editUser);
 router.put("/users/:id/suspend", suspendUser); // Suspender un usuario
+
+router.post("/send", sendEmail);
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);

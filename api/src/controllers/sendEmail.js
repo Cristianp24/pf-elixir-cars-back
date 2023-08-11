@@ -2,6 +2,7 @@ const sgMail = require("@sendgrid/mail");
 
 const sendEmail = async (req, res) => {
   const { to, subject, text } = req.body;
+  console.log(req.body);
 
   const msg = {
     to,
@@ -9,6 +10,7 @@ const sendEmail = async (req, res) => {
     subject,
     text,
   };
+
   try {
     await sgMail.send(msg);
     res.status(200).json({ message: "Correo electrónico enviado con éxito." });
