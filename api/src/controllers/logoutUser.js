@@ -15,11 +15,8 @@ const logOutUser = (req, res) => {
       maxAge: 0,
       path: "/",
     });
-<<<<<<< HEAD
     // res.setHeader("Set-Cookie", serialized);
-=======
     res.setHeader("Set-Cookie", serialized);
->>>>>>> e35d5047377992dee33d5aafaf9975bfe117dfa1
     res.status(200).json("Hasta pronto!");
   } catch (err) {
     return res.status(401).json({ error: "invalid token" });

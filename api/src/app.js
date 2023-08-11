@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // const express = require("express");
 // const router = require("./routes/index");
 // const cookieParser = require("cookie-parser");
@@ -48,7 +46,6 @@ const express = require("express");
 const router = require("./routes/index");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
->>>>>>> e35d5047377992dee33d5aafaf9975bfe117dfa1
 require("./db.js");
 const express = require("express");
 const router = require("./routes/index");
@@ -59,11 +56,8 @@ const server = express();
 
 server.use(express.json());
 server.use(cookieParser());
-<<<<<<< HEAD
 sgMail.setApiKey(process.env.API_KEY);
-=======
 
->>>>>>> e35d5047377992dee33d5aafaf9975bfe117dfa1
 // Configuración de CORS para permitir solicitudes desde un dominio específico (por ejemplo, http://localhost:3000)
 const allowedOrigins = ["http://localhost:5173"];
 const corsOptions = {
