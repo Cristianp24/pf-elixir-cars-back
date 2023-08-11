@@ -40,8 +40,8 @@ router.get("/cars/:id", getCarById); // Obtener un auto por su ID
 // Aquí aplicamos el middleware
 router.post("/cars", verifyToken, checkRole("admin"), createCar);
 
-router.put("/cars/:id", updateCar); // Actualizar un auto existente
-router.delete("/cars/:id", deleteCar); // Eliminar un auto por su ID
+router.put("/cars/:id",verifyToken, checkRole("admin"), updateCar); // Actualizar un auto existente
+router.delete("/cars/:id", verifyToken, checkRole("admin"), deleteCar); // Eliminar un auto por su ID
 // Rutas para las marcas
 router.get("/brands", getAllBrands); // Obtener todas las marcas
 // Rutas para los modelos
@@ -50,10 +50,10 @@ router.get("/carModels", getAllCarModels); // Obtener todas los modelos de autom
 // Rutas para los usuarios
 router.get("/users", getUsers); //obtener usuarios
 router.post("/logout", logOutUser);
-router.post("/users", createUser);
-router.delete("/users/:id", deleteUser);
-router.put("/users/:id", editUser);
-router.put("/users/:id/suspend", suspendUser); // Suspender un usuario
+router.post("/users", verifyToken, checkRole("admin"), createUser);
+router.delete("/users/:id", verifyToken, checkRole("admin"), deleteUser);
+router.put("/users/:id", verifyToken, checkRole("admin"), editUser);
+router.put("/users/:id/suspend", verifyToken, checkRole("admin"), suspendUser); // Suspender un usuario
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
