@@ -40,8 +40,8 @@ router.get("/cars/:id", getCarById); // Obtener un auto por su ID
 // Aquí aplicamos el middleware
 router.post("/cars", verifyToken, checkRole("admin"), createCar);
 
-router.put("/cars/:id",verifyToken, checkRole("admin"), updateCar); // Actualizar un auto existente
-router.delete("/cars/:id", verifyToken, checkRole("admin"), deleteCar); // Eliminar un auto por su ID
+router.put("/cars/:id", updateCar); // Actualizar un auto existente
+router.delete("/cars/:id", deleteCar); // Eliminar un auto por su ID
 // Rutas para las marcas
 router.get("/brands", getAllBrands); // Obtener todas las marcas
 // Rutas para los modelos
