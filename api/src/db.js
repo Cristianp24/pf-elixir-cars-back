@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 const models = require("./models");
-// const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+// const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
@@ -32,10 +32,11 @@ const {
   Order,
   OrderDetail,
   Review,
+  Emails,
 } = sequelize.models;
 
 CarModel.hasMany(Car);
-Car.belongsTo(CarModel), { foreignKey: "carModelId" };
+Car.belongsTo(CarModel, { foreignKey: "carModelId" });
 
 Brand.hasMany(Car);
 Car.belongsTo(Brand, { foreignKey: "brandId" });
@@ -140,5 +141,6 @@ module.exports = {
   Order,
   OrderDetail,
   Review,
+  Emails,
   conn: sequelize,
 };
