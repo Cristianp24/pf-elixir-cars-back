@@ -16,8 +16,6 @@ const deleteUser = require("../controllers/deleteUser");
 const editUser = require("../controllers/editUser");
 const suspendUser = require("../controllers/suspendUser");
 const logOutUser = require("../controllers/logoutUser");
-
-// const auth = require("../../middleware/auth")
 const getCart = require("../controllers/getCart");
 const updateCartDetail = require("../controllers/updateCartDetail");
 const createCartDetail = require("../controllers/createCartDetail");
@@ -31,6 +29,7 @@ const processOrder = require("../controllers/processOrder");
 const getAllOrders = require("../controllers/getAllOrders");
 const registerEmail = require("../controllers/regiterEmail");
 const sendEmail = require("../controllers/sendEmail");
+// const auth = require("../../middleware/auth")
 
 const router = Router();
 
