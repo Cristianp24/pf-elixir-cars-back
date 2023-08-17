@@ -50,10 +50,10 @@ router.get("/carModels", getAllCarModels); // Obtener todas los modelos de autom
 // Rutas para los usuarios
 router.get("/users", getUsers); //obtener usuarios
 router.post("/logout", logOutUser);
-router.post("/users", createUser);
-router.delete("/users/:id", deleteUser);
-router.put("/users/:id", editUser);
-router.put("/users/:id/suspend", suspendUser); // Suspender un usuario
+router.post("/users", verifyToken, checkRole("admin"), createUser);
+router.delete("/users/:id", verifyToken, checkRole("admin"), deleteUser);
+router.put("/users/:id", verifyToken, checkRole("admin"), editUser);
+router.put("/users/:id/suspend", verifyToken, checkRole("admin"), suspendUser); // Suspender un usuario
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
@@ -66,7 +66,7 @@ router.get("/cart", getCart);
 
 // Rutas para los detalles del carrito
 router.post("/cartDetails", createCartDetail);
-router.get("/cartDetails", getAllCartDetails);
+router.get("/cartDetails/:cartId", getAllCartDetails);
 router.put("/cartDetail/:id", updateCartDetail);
 router.delete("/cartDetail/:id", deleteCartDetail);
 

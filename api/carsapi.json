@@ -1612,6 +1612,7 @@
       "airbag": "6"
     }
   },
+  
   {
     "id": "1020",
     "marca": "Citroen",
@@ -1637,5 +1638,138 @@
       "Baul": "--",
       "airbag": "2"
     }
-  }
+  },
+  {
+    "id": "001",
+    "marca": "Kia",
+    "modelo": "Rio",
+    "presentacion": "NUEVO RIO 1.4 EX PLUS 4P AT",
+    "estado": "Usado",
+    "year": "2019",
+    "precio": "20100",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1691766771/E-comerce-Elixircars/Kia%20RIO%20NUEVO%20RIO%201.4%20EX%20PLUS%204P%20AT/chrome_JCAWH0R4R2_fu1di0.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691766771/E-comerce-Elixircars/Kia%20RIO%20NUEVO%20RIO%201.4%20EX%20PLUS%204P%20AT/chrome_jyi0QLz65P_bt4dlx.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691766771/E-comerce-Elixircars/Kia%20RIO%20NUEVO%20RIO%201.4%20EX%20PLUS%204P%20AT/chrome_x3IfME49lr_oyv06k.png"
+    ],
+    "kilometraje": "60500",
+    "combustible": "Nafta",
+    "fichaTecnica": {
+      "motor": "1400",
+      "pasajeros": "5",
+      "carroceria": "Sedan",
+      "transmision": "Automatica",
+      "traccion": "4x2",
+      "llantas": "17",
+      "potencia": "100 ",
+      "puertas": "4",
+      "baul": "475",
+      "airbag": "6"
+    }
+  },
+  {
+    "id": "001",
+    "marca": "Kia",
+    "modelo": "Picanto",
+    "presentacion": "ALL NEW PICANTO 1.0 EX PLUS",
+    "estado": "Usado",
+    "year": "2018",
+    "precio": "13300",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1691771366/E-comerce-Elixircars/Kia%20Picanto%20ALL%20NEW%20PICANTO%201.0%20EX%20PLUS/chrome_PSb49c5TQP_r0o7py.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691771366/E-comerce-Elixircars/Kia%20Picanto%20ALL%20NEW%20PICANTO%201.0%20EX%20PLUS/chrome_ejHHXvnQJ8_igragx.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691771366/E-comerce-Elixircars/Kia%20Picanto%20ALL%20NEW%20PICANTO%201.0%20EX%20PLUS/chrome_qx2qbUXqST_jr8b4i.png"
+    ],
+    "kilometraje": "60000",
+    "combustible": "Nafta",
+    "fichaTecnica": {
+      "motor": "998",
+      "pasajeros": "5",
+      "carroceria": "Hatch",
+      "transmision": "Manual",
+      "traccion": "4x2",
+      "llantas": "14",
+      "potencia": "67",
+      "puertas": "5",
+      "baul": "255",
+      "airbag": "2"
+    }
+  },
+  {
+    "id": "001",
+    "marca": "Hyundai",
+    "modelo": "HB20",
+    "presentacion": "NEW HB20 1.0 COMFORT FULL 5P MT",
+    "estado": "Usado",
+    "year": "2022",
+    "precio": "15800",
+    "imageUrl": [
+      "https://res.cloudinary.com/doobpmn9q/image/upload/v1691775802/E-comerce-Elixircars/Hyundai%20HB20%20NEW%20HB20%201.0%20COMFORT%20FULL%205P%20MT/chrome_frjGF9Wrya_vxy2rf.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691775802/E-comerce-Elixircars/Hyundai%20HB20%20NEW%20HB20%201.0%20COMFORT%20FULL%205P%20MT/chrome_pdXycvYC3x_yu4gxa.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691775802/E-comerce-Elixircars/Hyundai%20HB20%20NEW%20HB20%201.0%20COMFORT%20FULL%205P%20MT/chrome_frjGF9Wrya_vxy2rf.png"
+    ],
+    "kilometraje": "33105",
+    "combustible": "Nafta",
+    "fichaTecnica": {
+      "motor": "998",
+      "pasajeros": "5",
+      "carroceria": "Hatch",
+      "transmision": "Manual",
+      "traccion": "4x2",
+      "llantas": "14",
+      "potencia": "80",
+      "puertas": "5",
+      "baul": "300",
+      "airbag": "4"
+    }
+    },
+    {
+      "id": "001",
+      "marca": "Hyundai",
+      "modelo": "Tucson",
+      "presentacion": "NEW TUCSON 2.0 GL SPORT 4X4 AT",
+      "estado": "Usado",
+      "year": "2017",
+      "precio": "26900",
+      "imageUrl": [
+        "https://res.cloudinary.com/doobpmn9q/image/upload/v1691776466/E-comerce-Elixircars/Hyundai%20Tucson%20NEW%20TUCSON%202.0%20GL%20SPORT%204X4%20AT/chrome_SJcM31uiqB_bdn51m.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691776466/E-comerce-Elixircars/Hyundai%20Tucson%20NEW%20TUCSON%202.0%20GL%20SPORT%204X4%20AT/chrome_yEnbpnQlvD_m2mnv1.png", "https://res.cloudinary.com/doobpmn9q/image/upload/v1691776466/E-comerce-Elixircars/Hyundai%20Tucson%20NEW%20TUCSON%202.0%20GL%20SPORT%204X4%20AT/chrome_i54Koh2Umq_kktpiu.png"
+      ],
+      "kilometraje": "11900",
+      "combustible": "Nafta",
+      "fichaTecnica": {
+        "motor": "1999",
+        "pasajeros": "5",
+        "carroceria": "SUV",
+        "transmision": "Automatica",
+        "traccion": "4x4",
+        "llantas": "17",
+        "potencia": "157",
+        "puertas": "4",
+        "baul": "--",
+        "airbag": "6"
+      }
+      },
+      {
+        "id": "019",
+        "marca": "Suzuki",
+        "modelo": "Alto",
+        "presentacion": "ALTO 800",
+        "precio": "9490",
+        "estado": "Usado",
+        "year": "2019",
+        "imageUrl": [
+          "https://res.cloudinary.com/doobpmn9q/image/upload/v1691778021/E-comerce-Elixircars/Suzuki%20ALTO/chrome_E8ta5BUeYa_b69byd.png",
+          "https://res.cloudinary.com/doobpmn9q/image/upload/v1691778022/E-comerce-Elixircars/Suzuki%20ALTO/chrome_4dSRiawbDa_e1dgng.png",
+          "https://res.cloudinary.com/doobpmn9q/image/upload/v1691778021/E-comerce-Elixircars/Suzuki%20ALTO/chrome_E8ta5BUeYa_b69byd.png"
+        ],
+        "combustible": "Nafta",
+        "kilometraje": "115000",
+        "fichaTecnica": {
+          "motor": "796",
+          "pasajeros": "5",
+          "carroceria": "HATCH",
+          "transmision": "manual",
+          "traccion": "4x2",
+          "llantas": "13",
+          "potencia": "47",
+          "puertas": "5",
+          "baul": "177",
+          "airbag": "2"
+        }
+      }
+  
 ]
